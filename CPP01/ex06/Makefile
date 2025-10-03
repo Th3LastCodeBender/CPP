@@ -1,4 +1,4 @@
-NAME = Mugugno
+NAME = harlFilter
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -g
