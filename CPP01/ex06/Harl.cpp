@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:32:30 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/03 11:53:28 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/03 12:09:29 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,55 @@ Harl::Harl()
 
 void	Harl::debug( void )
 {
+	std::cout << "[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle- specialketchup burger. I really do!" << std::endl;
+	std::cout << std::endl;
 }
 
 void	Harl::info( void )
 {
+	std::cout << "[ INFO ]" << std::endl;
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << std::endl;
 }
 
 void	Harl::warning( void )
 {
+	std::cout << "[ WARNING ]" << std::endl;
 	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
+	std::cout << std::endl;
 }
 
 void	Harl::error( void )
 {
+	std::cout << "[ ERROR ]" << std::endl;
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << std::endl;
 }
 
 void	Harl::complain( std::string level )
 {
-	int i;
+	int index;
 	
-	i = 0;
-	while (i < 4)
+	index = 0;
+	while (index < 4 && level.compare(this->function[index]) != 0)
+		index++;
+	switch (index)
 	{
-		if (level.compare(this->function[i]) == 0)
-			(this->*complaints[i])();
-		i++;
-	}	
+	case DEBUG:
+		this->debug();
+	case INFO:
+		this->info();
+	case WARNING:
+		this->warning();
+	case ERROR:
+		this->error();
+		break;
+	
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		break;
+	}
 }
 
 Harl::~Harl()

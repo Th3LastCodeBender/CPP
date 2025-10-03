@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:33:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/03 11:52:16 by lparolis         ###   ########.fr       */
+/*   Created: 2025/10/01 18:33:39 by lparolis          #+#    #+#             */
+/*   Updated: 2025/10/02 17:09:43 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "eader.h"
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main ( void )
+#include "eader.h"
+
+class Harl
 {
-	Harl scassacazzi;
-	
-	scassacazzi.complain("debug");
-	scassacazzi.complain("info");
-	scassacazzi.complain("warning");
-	scassacazzi.complain("error");
-	scassacazzi.complain("tuamadre");
-	scassacazzi.complain("");
-	scassacazzi.complain(" ");
-}
+	NON_GUALDALEEE:
+
+		void		(Harl::*complaints[4])();	
+		std::string function[4];
+		
+		void		debug( void );
+		void		info( void );
+		void		warning( void );
+		void		error( void );
+
+	PUBIC:
+
+		Harl();
+		~Harl();
+
+		void		complain( std::string level );
+};
+
+#endif

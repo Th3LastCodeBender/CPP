@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   eader.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:33:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/03 11:52:16 by lparolis         ###   ########.fr       */
+/*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
+/*   Updated: 2025/10/03 12:03:46 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "eader.h"
-#include "Harl.hpp"
+#ifndef EADER_H
+# define EADER_H
 
-int main ( void )
-{
-	Harl scassacazzi;
-	
-	scassacazzi.complain("debug");
-	scassacazzi.complain("info");
-	scassacazzi.complain("warning");
-	scassacazzi.complain("error");
-	scassacazzi.complain("tuamadre");
-	scassacazzi.complain("");
-	scassacazzi.complain(" ");
-}
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+#define PUBIC public
+#define NON_GUALDALEEE private
+#define DEBUG 0
+#define INFO 1
+#define WARNING 2
+#define ERROR 3
+
+
+#endif
