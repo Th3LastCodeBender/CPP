@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:33:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/08 10:37:03 by lparolis         ###   ########.fr       */
+/*   Created: 2025/10/08 10:51:52 by lparolis          #+#    #+#             */
+/*   Updated: 2025/10/08 11:14:32 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "eader.h"
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int main ( int argc, char **argv )
+int main( void ) 
 {
-	Harl scassacazzi;
-	
-	if (argc < 2)
-	{
-		std::cout << "Belin che affare, ma li sai passare gli argomenti ad un programma o l'unica cosa che hai passato era la giornata in cui hanno pubblicato l'aggiornamento per farti funzionare il cervello?" << std::endl;
-		return (0);
-	}
-	scassacazzi.complain(argv[1]);
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0
 }

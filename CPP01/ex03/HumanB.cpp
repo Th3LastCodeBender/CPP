@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:18:57 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/01 11:20:06 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/08 12:14:37 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 HumanB::HumanB( std::string startingName)
 {
 	this->name = startingName;
+	this->weapon = NULL;
 	std::cout << "HumanB constructor called" << std::endl;
 }
 
@@ -25,6 +26,10 @@ void	HumanB::setWeapon( Weapon &weaponToSet )
 
 void	HumanB::attack()
 {
+	if (this->weapon == NULL || this->weapon->getType().empty())
+	{
+		std::cout << "e con cosa attaco io, con i tarzanelli?" << std::endl;
+	}
 	std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 }
 

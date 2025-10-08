@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:32:30 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/03 12:09:29 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/08 11:57:02 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ Harl::Harl()
 	this->complaints[2] = &Harl::warning;
 	this->complaints[3] = &Harl::error;
 	
-	this->function[0] = "debug";
-	this->function[1] = "info";
-	this->function[2] = "warning";
-	this->function[3] = "error";
+	this->function[0] = "DEBUG";
+	this->function[1] = "INFO";
+	this->function[2] = "WARNING";
+	this->function[3] = "ERROR";
 	
 	std::cout << "Harl Constructor called" << std::endl;
 }

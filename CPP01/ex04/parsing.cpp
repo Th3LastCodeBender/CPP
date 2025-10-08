@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 12:20:51 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/01 16:45:58 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/08 12:29:07 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ int	parsing(int argc, char **argv)
 	}
 	else if (!file_parsing(argv[1]))
 		return (0);
-	else if (argv[2] == NULL || argv[2] == '\0' || argv[3] == NULL || argv[3] == '\0')
+	else if (argv[2][0] == '\0')
+	{
+		std::cout << "sostituire il nulla... IL NULLA!?, BELIN SEI DA USARE AL POSTO DEL COMBUSTIBILE!" << std::endl;
+		return (0);
+	}
+	else if (argv[2] == NULL || argv[3] == NULL)
 	{
 		std::cout << "Belin figgeu, ogni minuto che passa diventi esponenzialmente piu' simpatico" << std::endl;
 		return (0);

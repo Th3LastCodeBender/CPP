@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:33:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/08 10:37:03 by lparolis         ###   ########.fr       */
+/*   Created: 2025/10/08 10:53:29 by lparolis          #+#    #+#             */
+/*   Updated: 2025/10/08 11:13:42 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "eader.h"
-#include "Harl.hpp"
 
-int main ( int argc, char **argv )
+class Fixed
 {
-	Harl scassacazzi;
+	NON_GUALDALEEE:
 	
-	if (argc < 2)
-	{
-		std::cout << "Belin che affare, ma li sai passare gli argomenti ad un programma o l'unica cosa che hai passato era la giornata in cui hanno pubblicato l'aggiornamento per farti funzionare il cervello?" << std::endl;
-		return (0);
-	}
-	scassacazzi.complain(argv[1]);
-}
+		int					number_value;
+		static const int	fractional_bits;
+
+	PUBIC:
+
+		Fixed();
+		Fixed(const Fixed &obj);
+		Fixed(const Fixed &obj);
+		Fixed& operator=(const Fixed &obj);
+		int getRawbits( void ) const;
+		void setRawbits( int const raw ) const;
+};

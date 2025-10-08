@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 11:27:14 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/01 18:27:11 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/08 12:21:18 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	search_and_destroy(char **argv)
 	std::string			to_find;
 	std::string			to_replace;
 	std::string			new_content;
+	std::string			new_filename;
 	std::size_t			index;
 	std::size_t			last;
 	
@@ -50,7 +51,17 @@ void	search_and_destroy(char **argv)
 		index = (file_content.find(to_find, index));
 	}
 	new_content += file_content.substr(last);
-	std::cout << new_content << std::endl;
+	new_filename = argv[1];
+	new_filename += ".replace";
+	
+    std::ofstream new_out(new_filename.c_str());
+	
+    if (!new_out.is_open())
+	{
+        std::cerr << "Belin il nuovo file e' rotto!" << std::endl;
+        return ;
+    }
+	new_out << new_content;
 	input_file.close();
 	
 	return;
