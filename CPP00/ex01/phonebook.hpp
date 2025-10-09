@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:47:41 by lparolis          #+#    #+#             */
-/*   Updated: 2025/09/10 16:35:16 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/09 10:35:11 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class PhoneBook
 	
 		int			to_print;
 		static int	index;
+		static int	added;
 		Contact 	phonebook[8];
 	
 	PUBIC:
@@ -30,6 +31,7 @@ class PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		
+		// static int	added;
 		void	printanding(Contact phonebook[8]);
 		void	search_command();
 		void	add_command();

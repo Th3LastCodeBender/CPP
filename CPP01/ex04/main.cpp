@@ -60,7 +60,7 @@ void	search_and_destroy(char **argv)
 	{
         std::cerr << "Belin il nuovo file e' rotto!" << std::endl;
         return ;
-    }
+    	}
 	new_out << new_content;
 	input_file.close();
 	
