@@ -29,7 +29,7 @@ void	toupper_print(char *line)
 {
 	while (*line)
 	{
-		std::cout << (char)toupper(*line);
+		std::cout << (char)std::toupper(*line);
 		line++;
 	}
 }

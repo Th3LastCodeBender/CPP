@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 10:51:52 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/08 11:14:32 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/16 09:51:30 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ int main( void )
 	Fixed a;
 	Fixed b( a );
 	Fixed c;
+
 	c = b;
+	
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
-	return 0
+	return (0);
 }

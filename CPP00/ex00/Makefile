@@ -17,7 +17,7 @@ clean:
 fclean:
 	rm -f $(NAME)
 
-re: flcean all
+re: fclean all
 
 run: $(NAME)
 	clear ; ./$(NAME) "oliooooooo spoooorco"
