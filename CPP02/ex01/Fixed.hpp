@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 10:53:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/16 11:16:36 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:26:40 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,16 @@ class Fixed
 	PUBIC:
 
 		Fixed();
+		Fixed( const int toConvert);
+		Fixed( const float toConvert);
 		Fixed(const Fixed &obj);
 		Fixed& operator=(const Fixed &obj);
+		friend std::ostream &operator<<(std::ostream &out, const Fixed &obj);
 		~Fixed();
+		
+		float toFloat( void ) const;
+		int toInt( void ) const;
+		
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 };

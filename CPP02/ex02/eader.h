@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/03 12:03:46 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/16 11:49:57 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <climits>
+#include <cmath>
 #define PUBIC public
 #define NON_GUALDALEEE private
 #define DEBUG 0

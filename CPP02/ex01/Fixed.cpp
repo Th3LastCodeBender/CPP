@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:57:35 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/16 11:17:32 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:41:28 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ Fixed::Fixed()
 {
 	std::cout << "Fixed constructor called" << std::endl;
 	this->raw_value = 0;
+}
+
+Fixed::Fixed(const int toConvert)
+{
+	std::cout << "Fixed constructor called" << std::endl;
+	this->raw_value = toConvert << this->fractional_bits;
+}
+
+Fixed::Fixed(const float toConvert)
+{
+	std::cout << "Fixed constructor called" << std::endl;
+	this->raw_value = static_cast<int>(roundf((toConvert * (1 << this->fractional_bits))));
 }
 
 Fixed::Fixed(const Fixed &obj)
@@ -48,4 +60,20 @@ int Fixed::getRawBits( void ) const
 void	Fixed::setRawBits ( int const raw )
 {
 	this->raw_value = raw;
+}
+
+float Fixed::toFloat ( void ) const
+{
+	return (static_cast<float>(this->raw_value) / (1 << fractional_bits));
+}	
+
+int	Fixed::toInt ( void ) const
+{
+	return (this->raw_value >> this->fractional_bits);
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &obj) 
+{
+    out << obj.toFloat();
+    return (out);
 }
