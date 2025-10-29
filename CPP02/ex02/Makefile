@@ -1,10 +1,10 @@
-NAME = Zombini
+NAME = Fissazione
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp Fixed.cpp
 
 all: $(NAME)
 
