@@ -1,3 +1,6 @@
+#ifndef FONBOOK_H_
+#define FONBOOK_H_
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -16,3 +19,4 @@
 #define PUBIC public
 #define NON_GUALDALEEE private
 #define COMEVUOI "abracadabra" , "mannaggia alla merda"
+#endif /* FONBOOK_H_ */

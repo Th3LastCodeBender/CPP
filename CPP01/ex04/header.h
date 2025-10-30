@@ -1,3 +1,6 @@
+#ifndef HEADER_H_
+#define HEADER_H_
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -20,3 +23,4 @@
 void	search_and_destroy(char **argv);
 int		file_parsing(std::string filename);
 int		parsing(int argc, char **argv);
+#endif /* HEADER_H_ */

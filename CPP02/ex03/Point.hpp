@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -10,6 +11,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef POINT_HPP_
+#define POINT_HPP_
 #include "eader.h"
 #include "Fixed.hpp"
 
@@ -34,3 +37,4 @@ class Point
 		// Fixed fixedTriangleArea(Point a, Point b, Point c);
 		static bool bsp( Point const a, Point const b, Point const c, Point const point);
 };
+#endif /* POINT_HPP_ */

@@ -6,9 +6,12 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 10:53:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/16 17:26:40 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:50:32 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP_
+#	define FIXED_HPP_
 
 #include "eader.h"
 
@@ -35,3 +38,5 @@ class Fixed
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 };
+
+#endif
