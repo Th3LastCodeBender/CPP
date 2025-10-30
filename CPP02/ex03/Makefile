@@ -4,7 +4,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp
 
 all: $(NAME)
 
@@ -20,7 +20,7 @@ fclean:
 re: fclean all
 
 run: $(NAME)
-	clear ; ./$(NAME)
+	clear && ./$(NAME)
 
 val: $(NAME)
 	clear ; valgrind ./$(NAME)
