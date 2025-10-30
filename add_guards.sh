@@ -21,7 +21,8 @@ find "$ROOT" -type f \( -name '*.h' -o -name '*.hpp' \) | while IFS= read -r f; 
       head -n "$end_line" "$f" > "$tmp"
       printf "\n#ifndef %s\n#define %s\n\n" "$guard" "$guard" >> "$tmp"
       tail -n +"$((end_line + 1))" "$f" >> "$tmp"
-      printf "\n#endif /* %s */\n" "$guard" >> "$tmp"
+      # aggiunge una riga vuota (con uno spazio) prima di #endif
+      printf "\n \n#endif /* %s */\n" "$guard" >> "$tmp"
       mv "$tmp" "$f"
       printf "added guard to: %s -> %s (after header)\n" "$f" "$guard"
       continue
@@ -30,9 +31,10 @@ find "$ROOT" -type f \( -name '*.h' -o -name '*.hpp' \) | while IFS= read -r f; 
 
   # fallback: aggiungi il guard all'inizio del file
   tmp="$(mktemp)"
-  printf "#ifndef %s\n#define %s\n\n" "$guard" "$guard" > "$tmp"
+  printf "#ifndef %s\n	#define %s\n\n" "$guard" "$guard" > "$tmp"
   cat "$f" >> "$tmp"
-  printf "\n#endif /* %s */\n" "$guard" >> "$tmp"
+  # aggiunge una riga vuota prima di #endif
+  printf "\n\n#endif\n" "$guard" >> "$tmp"
   mv "$tmp" "$f"
   printf "added guard to: %s -> %s\n" "$f" "$guard"
 done

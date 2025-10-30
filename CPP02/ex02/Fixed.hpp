@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 10:53:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/30 16:50:35 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:55:03 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,4 @@ class Fixed
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 };	
-#endif /* FIXED_HPP_ */
+#endif
