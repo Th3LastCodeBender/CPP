@@ -6,13 +6,13 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:23:17 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 11:42:48 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/31 16:46:53 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( std::string name )
+ClapTrap::ClapTrap( std::string name ) : max_hp(10)
 {
 	this->name = name;
 	this->attack_damage = 10;
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap( std::string name )
 	DBG_MSG("ClapTrap constructor called");
 }
 
-ClapTrap::ClapTrap( const ClapTrap &obj)
+ClapTrap::ClapTrap( const ClapTrap &obj) : max_hp(obj.max_hp)
 {
 	this->attack_damage = obj.attack_damage;
 	this->energy_points = obj.energy_points;
@@ -93,9 +93,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	
 	this->energy_points--;
 	
-	if (this->hit_points > 10)
+	if (this->hit_points + amount > this->max_hp)
 	{
-		amount -= (this->hit_points + amount) - 10;
+		amount -= (this->hit_points + amount) - this->max_hp;
 		this->hit_points += amount;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 11:17:24 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/31 16:13:08 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 #include <sstream>
 #include <climits>
 #define PUBIC public
+#define ABBLACCINOOOOO public
 #define NON_GUALDALEEE private
-#define DEBUG 0
+#define DEBUG 1
 #define MSG(msg) (std::cout << (msg) << std::endl)
 
 #if defined(DEBUG) && DEBUG

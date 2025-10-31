@@ -6,13 +6,13 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:02:49 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 15:38:08 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/10/31 17:35:32 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	NON_GUALDALEEE:
 

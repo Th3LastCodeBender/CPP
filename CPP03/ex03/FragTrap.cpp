@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 12:02:49 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 15:38:08 by lparolis         ###   ########.fr       */
+/*   Created: 2025/10/31 16:55:13 by lparolis          #+#    #+#             */
+/*   Updated: 2025/10/31 17:07:14 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
-	NON_GUALDALEEE:
+	DBG_MSG("FragTrap constructor called");
+}
 
-	PUBIC:
-	
-		ScavTrap(const std::string name);
-		~ScavTrap();
-		
-		void	attack(const std::string &name);
-		void	guardGate();	
-};
+FragTrap::~FragTrap()
+{
+	DBG_MSG("FragTrap deconstructor called");
+}
+
+void	FragTrap::highFivesGuys()
+{
+	MSG("This member function displays a positive high-fives request on the standard output.");
+}

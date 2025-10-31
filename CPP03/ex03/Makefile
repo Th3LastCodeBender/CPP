@@ -1,15 +1,15 @@
-NAME = Fissazione
+NAME = Il_lascito_ai_nipotini
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 all: $(NAME)
 
 $(NAME): $(SRCS)
-		$(CC) $(FLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME)
+		$(CC) -DDEBUG=1 $(FLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@echo "wassup"
