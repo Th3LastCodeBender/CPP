@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eader.h                                            :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 11:17:24 by lparolis         ###   ########.fr       */
+/*   Created: 2025/10/31 12:02:49 by lparolis          #+#    #+#             */
+/*   Updated: 2025/10/31 12:16:55 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EADER_H
-# define EADER_H
+#include "ClapTrap.hpp"
 
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <climits>
-#define PUBIC public
-#define NON_GUALDALEEE private
-#define DEBUG 0
-#define MSG(msg) (std::cout << (msg) << std::endl)
+class ScavTrap : public ClapTrap
+{
+	NON_GUALDALEEE:
 
-#if defined(DEBUG) && DEBUG
-  #define DBG_MSG(msg) (std::cout << (msg) << std::endl)
-#else
-  #define DBG_MSG(msg) ((void)0)
-#endif
-
-#endif
+	PUBIC:
+	
+		ScavTrap(const std::string name);
+		~ScavTrap();
+		
+		void	attack(const std::string &name);
+		void	guardGate();	
+};
