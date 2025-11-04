@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:36:28 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 19:03:05 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 22:26:11 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ Cat::Cat() : type("Cat")
 Cat::Cat(const Cat &obj) : Animal(obj)
 {
 	this->type = obj.type;
+
+	if (obj.scervelo)
+		this->scervelo = new Brain(*obj.scervelo);
+	
 	DBG_MSG("Cat copy constructor called");
 }
 
@@ -28,6 +32,12 @@ Cat &Cat::operator=(const Cat &obj)
 {
 	Animal::operator=(obj);
 	this->type = obj.type;
+	
+	delete this->scervelo;
+	this->scervelo = NULL;
+
+	if (obj.scervelo)
+		this->scervelo = new Brain(*obj.scervelo);
 	
 	DBG_MSG("Cat copy operator called");
 	return(*this);
@@ -47,6 +57,5 @@ void	Cat::makeSound() const
 
 std::string	Cat::getType() const
 {
-	delete(scervelo);
 	return (this->type);
 }

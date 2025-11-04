@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:36:28 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 19:15:30 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 22:26:11 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ Dog::Dog() : type("Dog")
 Dog::Dog(const Dog &obj) : Animal(obj)
 {
 	this->type = obj.type;
+
+	if (obj.scervelo)
+		this->scervelo = new Brain(*obj.scervelo);
+
 	DBG_MSG("Dog copy constructor called");
 }
 
@@ -28,6 +32,12 @@ Dog &Dog::operator=(const Dog &obj)
 {
 	this->type = obj.type;
 	
+	delete this->scervelo;
+	this->scervelo = NULL;
+
+	if (obj.scervelo)
+		this->scervelo = new Brain(*obj.scervelo);
+
 	DBG_MSG("Dog copy operator called");
 	return(*this);
 }
@@ -46,6 +56,5 @@ void	Dog::makeSound() const
 
 std::string Dog::getType() const
 {
-	delete(scervelo);
 	return (this->type);
 }

@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:16:45 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 13:47:32 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 22:27:14 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Animal
 		Animal &operator=(const Animal &obj);
 		virtual ~Animal();
 
-		virtual std::string	getType() const;
-		virtual void		makeSound() const;
+		virtual std::string	getType() const = 0;
+		virtual void		makeSound() const = 0;
 };
 
 #endif

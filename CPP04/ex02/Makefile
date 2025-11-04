@@ -1,4 +1,4 @@
-NAME = Zoo
+NAME = BELIN_LE_BESTIE
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
