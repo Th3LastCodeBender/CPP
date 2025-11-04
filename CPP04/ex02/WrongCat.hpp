@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/01 18:37:46 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 18:46:40 by lparolis         ###   ########.fr       */
+/*   Created: 2025/11/01 19:04:40 by lparolis          #+#    #+#             */
+/*   Updated: 2025/11/04 17:39:19 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include "eader.h"
 #include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 	NON_GUALDALEEE:
 
 		std::string type;
-		Brain* scervelo;
 
 	PUBIC:
 
-		Dog();
-		Dog(const Dog &obj);
-		Dog &operator=(const Dog &obj);
-		~Dog();
+		WrongCat();
+		WrongCat(const WrongCat &obj);
+		WrongCat &operator=(const WrongCat &obj);
+		~WrongCat();
 
 		virtual std::string getType() const;
 		void				makeSound() const;

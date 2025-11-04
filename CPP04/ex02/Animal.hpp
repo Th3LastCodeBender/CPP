@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/01 18:37:46 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 18:46:40 by lparolis         ###   ########.fr       */
+/*   Created: 2025/11/01 18:16:45 by lparolis          #+#    #+#             */
+/*   Updated: 2025/11/04 13:47:32 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include "eader.h"
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal
+class Animal
 {
-	NON_GUALDALEEE:
+	ABBLACCINOOOOO:
 
 		std::string type;
-		Brain* scervelo;
 
 	PUBIC:
 
-		Dog();
-		Dog(const Dog &obj);
-		Dog &operator=(const Dog &obj);
-		~Dog();
+		Animal();
+		Animal(const Animal &obj);
+		Animal &operator=(const Animal &obj);
+		virtual ~Animal();
 
-		virtual std::string getType() const;
-		void				makeSound() const;
+		virtual std::string	getType() const;
+		virtual void		makeSound() const;
 };
 
 #endif
