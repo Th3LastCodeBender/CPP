@@ -1,4 +1,4 @@
-NAME = Zoo
+NAME = BURN_BABY_BURN
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror

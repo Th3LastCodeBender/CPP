@@ -1,49 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:36:28 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 17:42:20 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:57:25 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : type("Cat")
+WrongCat::WrongCat() : type("WrongCat")
 {
-	DBG_MSG("Cat constructor called");
+	DBG_MSG("WrongCat constructor called");
 }
 
-Cat::Cat(const Cat &obj) : Animal(obj)
+WrongCat::WrongCat(const WrongCat &obj) : WrongAnimal(obj)
 {
 	this->type = obj.type;
-	DBG_MSG("Cat copy constructor called");
+	DBG_MSG("WrongCat copy constructor called");
 }
 
-Cat &Cat::operator=(const Cat &obj)
+WrongCat &WrongCat::operator=(const WrongCat &obj)
 {
-	Animal::operator=(obj);
+	WrongAnimal::operator=(obj);
 	this->type = obj.type;
 	
-	DBG_MSG("Cat copy operator called");
+	DBG_MSG("WrongCat copy operator called");
 	return(*this);
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	DBG_MSG("Cat destructor called");
+	DBG_MSG("WrongCat destructor called");
 }
 
-void	Cat::makeSound() const
+void	WrongCat::makeSound() const
 {
-	std::cout << "MEAOW" << std::endl;
+	std::cout << "WRONG MIAO" << std::endl;
 	EEGG_MSG("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
 }
 
-std::string	Cat::getType() const
+std::string	WrongCat::getType() const
 {
 	return (this->type);
 }

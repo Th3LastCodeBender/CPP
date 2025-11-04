@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:36:28 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 13:57:43 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 17:42:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Dog::~Dog()
 
 void	Dog::makeSound() const
 {
-	std::cout << "MIAO" << std::endl;
+	std::cout << "WOOF" << std::endl;
 	EEGG_MSG("VERONICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
 }
 

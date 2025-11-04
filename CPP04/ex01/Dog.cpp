@@ -1,49 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:36:28 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 17:42:20 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 18:00:33 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() : type("Cat")
+Dog::Dog() : type("Dog")
 {
-	DBG_MSG("Cat constructor called");
+	DBG_MSG("Dog constructor called");
 }
 
-Cat::Cat(const Cat &obj) : Animal(obj)
+Dog::Dog(const Dog &obj) : Animal(obj)
 {
 	this->type = obj.type;
-	DBG_MSG("Cat copy constructor called");
+	DBG_MSG("Dog copy constructor called");
 }
 
-Cat &Cat::operator=(const Cat &obj)
+Dog &Dog::operator=(const Dog &obj)
 {
-	Animal::operator=(obj);
 	this->type = obj.type;
 	
-	DBG_MSG("Cat copy operator called");
+	DBG_MSG("Dog copy operator called");
 	return(*this);
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	DBG_MSG("Cat destructor called");
+	DBG_MSG("Dog destructor called");
 }
 
-void	Cat::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << "MEAOW" << std::endl;
-	EEGG_MSG("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
+	std::cout << "WOOF" << std::endl;
+	EEGG_MSG("VERONICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
 }
 
-std::string	Cat::getType() const
+std::string Dog::getType() const
 {
 	return (this->type);
 }
