@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 17:08:44 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 22:35:29 by lparolis         ###   ########.fr       */
+/*   Created: 2025/11/04 22:36:18 by lparolis          #+#    #+#             */
+/*   Updated: 2025/11/04 22:44:38 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-#define 	DIAMONDTRAP_HPP
-
 #include "eader.h"
-#include "FragTrap.hpp"
 
-class DiamondTrap : public FragTrap, ScavTrap
+class AMateria
 {
-	NON_GUALDALEEE:
+	protected:
 
-		std::string name;
+		std::string type;
+
+	public:
+	
+		AMateria();
+		AMateria(std::string const & type);
+		AMateria(const AMateria &obj);
+		AMateria &operator=(const AMateria &obj);
+		~AMateria();
 		
-	PUBIC:
-
-		DiamondTrap(const std::string &name);
-		~DiamondTrap();
-
-		using ScavTrap::attack;
-		
-		void	whoAmI();
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
-
-#endif

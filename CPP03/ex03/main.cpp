@@ -6,13 +6,12 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 11:24:49 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/01 18:07:30 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 22:33:30 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "eader.h"
 #include "DiamondTrap.hpp"
-
 
 int main()
 {
