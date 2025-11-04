@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 16:55:13 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
+/*   Created: 2025/11/01 19:04:40 by lparolis          #+#    #+#             */
+/*   Updated: 2025/11/04 13:45:01 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
-{
-	DBG_MSG("FragTrap constructor called");
-}
+#include "eader.h"
+#include "Animal.hpp"
 
-FragTrap::~FragTrap()
+class Cat : public Animal
 {
-	DBG_MSG("FragTrap destructor called");
-}
+	NON_GUALDALEEE:
 
-void	FragTrap::highFivesGuys()
-{
-	MSG("This member function displays a positive high-fives request on the standard output.");
-}
+		std::string type;
+
+	PUBIC:
+
+		Cat();
+		Cat(const Cat &obj);
+		Cat &operator=(const Cat &obj);
+		~Cat();
+
+		virtual std::string getType() const;
+		void				makeSound() const;
+};
+
+#endif

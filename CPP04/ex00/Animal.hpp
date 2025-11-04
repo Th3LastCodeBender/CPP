@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 16:55:13 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
+/*   Created: 2025/11/01 18:16:45 by lparolis          #+#    #+#             */
+/*   Updated: 2025/11/04 13:47:32 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
-{
-	DBG_MSG("FragTrap constructor called");
-}
+#include "eader.h"
 
-FragTrap::~FragTrap()
+class Animal
 {
-	DBG_MSG("FragTrap destructor called");
-}
+	ABBLACCINOOOOO:
 
-void	FragTrap::highFivesGuys()
-{
-	MSG("This member function displays a positive high-fives request on the standard output.");
-}
+		std::string type;
+
+	PUBIC:
+
+		Animal();
+		Animal(const Animal &obj);
+		Animal &operator=(const Animal &obj);
+		virtual ~Animal();
+
+		virtual std::string	getType() const;
+		virtual void		makeSound() const;
+};
+
+#endif

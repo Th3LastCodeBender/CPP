@@ -6,9 +6,12 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:02:49 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 17:35:32 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/01 17:54:58 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+#define 	SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
@@ -24,3 +27,5 @@ class ScavTrap : virtual public ClapTrap
 		void	attack(const std::string &name);
 		void	guardGate();	
 };
+
+#endif

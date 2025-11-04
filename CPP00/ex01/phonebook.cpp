@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:54:40 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/09 10:42:37 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int PhoneBook::added = 0;
 
 PhoneBook::~PhoneBook( void )
 {
-	std::cout << "PhoneBook Deconstructor called" << std::endl;
+	std::cout << "PhoneBook destructor called" << std::endl;
 	return;	
 }
 void	PhoneBook::printanding(Contact phonebook[8])

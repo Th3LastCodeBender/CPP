@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:32:30 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/08 11:57:02 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,5 @@ void	Harl::complain( std::string level )
 
 Harl::~Harl()
 {
-	std::cout << "Harl Deconstructor called" << std::endl;
+	std::cout << "Harl destructor called" << std::endl;
 }

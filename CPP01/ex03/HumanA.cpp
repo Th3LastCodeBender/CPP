@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:18:53 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/01 11:24:57 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	HumanA::attack()
 
 HumanA::~HumanA()
 {
-	std::cout << "HumanA deconstructor called" << std::endl;
+	std::cout << "HumanA destructor called" << std::endl;
 }

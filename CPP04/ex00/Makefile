@@ -1,10 +1,10 @@
-NAME = Il_lascito_ai_nipotini
+NAME = Zoo
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp
 
 all: $(NAME)
 
@@ -19,7 +19,7 @@ fclean:
 
 re: fclean all
 
-run: $(NAME)
+run: re
 	clear ; ./$(NAME)
 
 val: $(NAME)

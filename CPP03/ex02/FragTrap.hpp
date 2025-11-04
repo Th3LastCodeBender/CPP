@@ -6,9 +6,12 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:55:16 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 17:07:00 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/01 17:56:01 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FRAGTRAP_HPP
+#define 	FRAGTRAP_HPP
 
 #include "eader.h"
 #include "ScavTrap.hpp"
@@ -25,3 +28,5 @@ class FragTrap : public ClapTrap
 	
 		void highFivesGuys(void);
 };
+
+#endif

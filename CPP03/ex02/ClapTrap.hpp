@@ -6,9 +6,12 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:23:19 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 16:46:11 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/01 17:55:31 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+#define 	CLAPTRAP_HPP
 
 #include "eader.h"
 
@@ -34,4 +37,5 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
-	
+
+#endif

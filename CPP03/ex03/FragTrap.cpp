@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:55:13 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 17:07:14 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 
 FragTrap::~FragTrap()
 {
-	DBG_MSG("FragTrap deconstructor called");
+	DBG_MSG("FragTrap destructor called");
 }
 
 void	FragTrap::highFivesGuys()

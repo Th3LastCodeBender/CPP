@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:17:46 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/08 12:13:17 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ const std::string& Weapon::getType()
 
 Weapon::~Weapon()
 {
-	std::cout << "Weapon deconstructor called" << std::endl;
+	std::cout << "Weapon destructor called" << std::endl;
 }

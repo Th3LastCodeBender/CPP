@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:57:35 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/16 11:17:32 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed &Fixed::operator=(const Fixed &obj)
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed deconstructor called" << std::endl;
+	std::cout << "Fixed destructor called" << std::endl;
 }
 
 int Fixed::getRawBits( void ) const

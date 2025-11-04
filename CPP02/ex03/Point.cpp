@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:08:08 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/30 16:40:11 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	Point::getY()
 
 Point::~Point()
 {
-	DBG_MSG("Point deconstructor called");
+	DBG_MSG("Point destructor called");
 }
 
 static Fixed	fixedTriangleArea(Point a, Point b, Point c)

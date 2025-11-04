@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:57:35 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 11:34:51 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Fixed &Fixed::operator=(const Fixed &obj)
 
 Fixed::~Fixed()
 {
-	DBG_MSG("Fixed deconstructor called");
+	DBG_MSG("Fixed destructor called");
 }
 
 int Fixed::getRawBits( void ) const
