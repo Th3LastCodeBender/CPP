@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 22:36:18 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/05 15:21:47 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:23:35 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ class AMateria
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
- 
+
 #endif

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eader.h                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/05 17:31:08 by lparolis         ###   ########.fr       */
+/*   Created: 2025/11/05 16:26:13 by lparolis          #+#    #+#             */
+/*   Updated: 2025/11/05 16:27:07 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EADER_H
-# define EADER_H
+#ifndef IMATERIASOURCE_HPP
+#define 	IMATERIASOURCE_HPP
 
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <climits>
-#define PUBIC public
-#define NON_GUALDALEEE private
-#define DEBUG 1
-#define MSG(msg) (std::cout << (msg) << std::endl)
+#include "eader.h"
+#include "AMateria.hpp"
 
-#if defined(DEBUG) && DEBUG
-  #define DBG_MSG(msg) (std::cout << (msg) << std::endl)
-#else
-  #define DBG_MSG(msg) ((void)0)
-#endif
+class IMateriaSource
+{
+	public:
+	
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
 #endif
