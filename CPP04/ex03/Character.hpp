@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:23:36 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/05 17:47:13 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/06 10:52:33 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ class Character : public ICharacter
 	NON_GUALDALEEE:
 
 		std::string name;
+		size_t		size;
 		AMateria* inventory[4];
+		AMateria** leftovers;
 	
+		void addLeftoverMateria(int idx);
+		
 	PUBIC:
 		
 		Character();
@@ -35,6 +39,6 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
-}
+};
 
 #endif
