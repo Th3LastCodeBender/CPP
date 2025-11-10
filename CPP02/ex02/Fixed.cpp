@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:57:35 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/10 15:48:06 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:57:53 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,3 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return ((a > b) ? a : b);
 }
-
-#endif
