@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:23:36 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/06 10:52:33 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Character : public ICharacter
 {
-	NON_GUALDALEEE:
+	private:
 
 		std::string name;
 		size_t		size;
@@ -27,7 +27,7 @@ class Character : public ICharacter
 	
 		void addLeftoverMateria(int idx);
 		
-	PUBIC:
+	public:
 		
 		Character();
 		Character(const std::string name);

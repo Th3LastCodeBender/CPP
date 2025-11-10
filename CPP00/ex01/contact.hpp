@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 16:11:00 by lparolis          #+#    #+#             */
-/*   Updated: 2025/09/10 14:26:58 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Contact
 {
-	NON_GUALDALEEE:
+	private:
 
 		int			index;
 		std::string first_name;
@@ -26,7 +26,7 @@ class Contact
 		std::string phone_number;
 		std::string darkest_secret;
 		
-	PUBIC:
+	public:
 
 		Contact();
 		~Contact();

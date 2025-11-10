@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:17:27 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/08 11:48:00 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 class Weapon
 {
-	NON_GUALDALEEE:
+	private:
 
 		std::string type;
 
-	PUBIC:
+	public:
 
 		Weapon();
 		Weapon( std::string startingWeapon );

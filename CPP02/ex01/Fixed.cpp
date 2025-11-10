@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:57:35 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:39:39 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Fixed &Fixed::operator=(const Fixed &obj)
 {
 	if (this == &obj)
 	{
-		std::cout << "Ma belin, ma cosa scrivi? Io = Io? Certo che la droga ti ha fatto parecchio male" << std::endl;
+		std::cout << "Belin, What the hell are you writing? Me = Me? The drugs have really messed you up." << std::endl;
 		return (*this);
 	}
 	this->raw_value = obj.raw_value;

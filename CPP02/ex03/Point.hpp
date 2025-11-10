@@ -11,19 +11,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP_
-#define POINT_HPP_
+#ifndef POINT_HPP
+#define 	POINT_HPP
+
 #include "eader.h"
 #include "Fixed.hpp"
 
 class Point
 {
-	NON_GUALDALEEE:
+	private:
 
 		const Fixed x;
 		const Fixed y;
 
-	PUBIC:
+	public:
 
 		Point();
 		Point(const float xf, const float yf);
@@ -37,4 +38,5 @@ class Point
 		// Fixed fixedTriangleArea(Point a, Point b, Point c);
 		static bool bsp( Point const a, Point const b, Point const c, Point const point);
 };
-#endif /* POINT_HPP_ */
+
+#endif

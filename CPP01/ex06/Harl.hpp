@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:39 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/02 17:09:43 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Harl
 {
-	NON_GUALDALEEE:
+	private:
 
 		void		(Harl::*complaints[4])();	
 		std::string function[4];
@@ -27,7 +27,7 @@ class Harl
 		void		warning( void );
 		void		error( void );
 
-	PUBIC:
+	public:
 
 		Harl();
 		~Harl();

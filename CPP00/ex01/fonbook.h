@@ -16,7 +16,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#define PUBIC public
-#define NON_GUALDALEEE private
+#define public public
+#define private private
 #define COMEVUOI "abracadabra" , "mannaggia alla merda"
 #endif /* FONBOOK_H_ */

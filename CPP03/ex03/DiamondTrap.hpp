@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 17:08:44 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 22:35:29 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 class DiamondTrap : public FragTrap, ScavTrap
 {
-	NON_GUALDALEEE:
+	private:
 
 		std::string name;
 		
-	PUBIC:
+	public:
 
 		DiamondTrap(const std::string &name);
 		~DiamondTrap();

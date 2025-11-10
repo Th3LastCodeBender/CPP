@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:37:46 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 18:46:40 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 class Dog : public Animal
 {
-	NON_GUALDALEEE:
+	private:
 
 		std::string type;
 		Brain* scervelo;
 
-	PUBIC:
+	public:
 
 		Dog();
 		Dog(const Dog &obj);

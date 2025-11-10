@@ -17,11 +17,11 @@
 
 class WrongAnimal
 {
-	ABBLACCINOOOOO:
+	protected:
 
 		std::string type;
 
-	PUBIC:
+	public:
 
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal &obj);

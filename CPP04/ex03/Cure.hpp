@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 12:11:41 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/05 12:38:28 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 class Cure : public AMateria
 {
-	NON_GUALDALEEE:
+	private:
 
 		const std::string type;
 	
-	PUBIC:
+	public:
 
 		Cure();
 		Cure(const Cure &obj);

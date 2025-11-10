@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:12:35 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 19:17:26 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 class Brain
 {
-	NON_GUALDALEEE:
+	private:
 
 		std::string ideas[100];
 
-	PUBIC:
+	public:
 
 		Brain();
 		Brain(const Brain &obj);

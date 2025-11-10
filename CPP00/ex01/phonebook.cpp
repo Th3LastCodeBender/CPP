@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:54:40 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:33:07 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	PhoneBook::search_command()
 	if (this->added < 1)
 	{
 		std::cout << "-----------------------------ERROR---------------------------------------------------------------------" << std::endl;
-		std::cout << "Che burlone, adesso fai una cosa, cerca un ponte, sporgiti di molto per fare una foto e cadi PER SBAGLIO" << std::endl;
+		std::cout << "You joker — now do one thing: find a bridge, lean out far to take a photo and accidentally fall." << std::endl;
 		std::cout << "-----------------------------ERROR---------------------------------------------------------------------" << std::endl;
 		return;
 	}

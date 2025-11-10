@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:18:56 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/01 10:39:17 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 class HumanA
 {
-	NON_GUALDALEEE:
+	private:
 
 		std::string name;
 		Weapon		&weapon;
 	
-	PUBIC:
+	public:
 	
 		HumanA( std::string name, Weapon &startingWeapon );
 		~HumanA();

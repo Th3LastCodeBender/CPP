@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:23:19 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/01 17:55:31 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:54:43 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-	ABBLACCINOOOOO:
+	protected:
 	
 		std::string name;
 		int hit_points;
@@ -25,7 +25,7 @@ class ClapTrap
 		int attack_damage;
 		const unsigned int max_hp;
 
-	PUBIC:
+	public:
 
 		ClapTrap();
 		ClapTrap(const std::string name);

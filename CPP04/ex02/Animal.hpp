@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:16:45 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 22:27:14 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:54:43 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 class Animal
 {
-	ABBLACCINOOOOO:
+	protected:
 
 		std::string type;
 
-	PUBIC:
+	public:
 
 		Animal();
 		Animal(const Animal &obj);

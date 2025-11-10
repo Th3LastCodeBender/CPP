@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:02:49 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/01 17:56:56 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 class ScavTrap : public ClapTrap
 {
-	NON_GUALDALEEE:
+	private:
 
-	PUBIC:
+	public:
 	
 		ScavTrap(const std::string name);
 		~ScavTrap();

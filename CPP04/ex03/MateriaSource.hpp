@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:28:15 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/06 17:49:17 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 class MateriaSource : public IMateriaSource
 {
-	NON_GUALDALEEE:
+	private:
 
 		AMateria* materiasLearned[4];
 
-	PUBIC:
+	public:
 	
 		MateriaSource();
 		MateriaSource(const MateriaSource &obj);

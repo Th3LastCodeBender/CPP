@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:47:41 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/09 10:35:11 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 class PhoneBook 
 {
-	NON_GUALDALEEE:
+	private:
 	
 		int			to_print;
 		static int	index;
 		static int	added;
 		Contact 	phonebook[8];
 	
-	PUBIC:
+	public:
 	
 
 		PhoneBook(void);

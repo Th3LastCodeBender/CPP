@@ -6,17 +6,11 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:57:35 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/04 13:50:13 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:48:06 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-#if defined(DEBUG) && DEBUG
-  #define DBG_MSG(msg) (std::cout << (msg) << std::endl)
-#else
-  #define DBG_MSG(msg) ((void)0)
-#endif
 
 Fixed::Fixed()
 {
@@ -163,3 +157,5 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return ((a > b) ? a : b);
 }
+
+#endif

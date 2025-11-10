@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:48:58 by lparolis          #+#    #+#             */
-/*   Updated: 2025/09/30 14:39:00 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class Zombie
 {
-	NON_GUALDALEEE:
+	private:
 	
 		std::string name;
 		int			index;
 	
-	PUBIC:
+	public:
 		
 		Zombie();
 		~Zombie();

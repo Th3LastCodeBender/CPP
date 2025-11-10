@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:14:59 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/05 15:21:00 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 
 class Ice : public AMateria
 {
-	NON_GUALDALEEE:
+	private:
 
 		const std::string type;
 
-	PUBIC:
+	public:
 
 		Ice();
 		Ice(const Ice &obj);

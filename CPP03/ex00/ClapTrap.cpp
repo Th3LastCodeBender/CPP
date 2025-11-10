@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:23:17 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/31 16:46:53 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:50:58 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ClapTrap  &ClapTrap::operator=(const ClapTrap &obj)
 {
 	if (this == &obj)
 	{
-		DBG_MSG("Ma belin, ma cosa scrivi? Io = Io? Certo che la droga ti ha fatto parecchio male");
+		DBG_MSG("Belin, What the hell are you writing? Me = Me? Surely the drugs have done you a lot of harm");
 		return (*this);
 	}
 	this->attack_damage = obj.attack_damage;
