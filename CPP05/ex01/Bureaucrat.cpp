@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:45:22 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/10 19:00:19 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/29 15:59:57 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ Bureaucrat::~Bureaucrat()
 	DBG_MSG("Bureaucrat destructor called");
 }
 
-int	Bureaucrat::getGrade()
+int	Bureaucrat::getGrade() const
 {
 	return (this->grade);
 }
 
-std::string	Bureaucrat::getName()
+const std::string	Bureaucrat::getName() const
 {
 	return (this->name);
 }
@@ -87,8 +87,22 @@ void	Bureaucrat::decrementGrade()
 		throw std::out_of_range(name + " Post-decrement grade is too low!\n");
 }
 
+void	Bureaucrat::signForm(Form &formToSign) const
+{
+	try 
+	{
+		formToSign.beSigned(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->name <<  " couldn’t sign " << formToSign.getName() << " because " << e.what();
+		return;
+	}
+	std::cout << this->name << " signed " << formToSign.getName() << std::endl;
+}
+
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)
 {
-	os << obj.name << ", bureaucrat grade " << obj.grade << ".";
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 	return (os);
 }

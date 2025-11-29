@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:39:35 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/18 16:24:42 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/29 16:12:55 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define		BUREAUCRAT_HPP
 
 #include "eader.h"
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -31,13 +34,34 @@ class Bureaucrat
 		Bureaucrat &operator=(const Bureaucrat &obj);
 		~Bureaucrat();
 		
-		std::string			getName();
-		int					getGrade();
+		const std::string	getName() const;
+		int					getGrade() const;
 		void				incrementGrade();
 		void				decrementGrade();
+		void				signForm(Form &formToSign) const;
 		
-		friend std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
+		class GradeTooHighException : public std::exception
+		{
+			private:
+				std::string _msg;
+			public:
+				GradeTooHighException(std::string msg) : _msg(msg) {};
+				virtual const char *what() const throw() {return (_msg.c_str());}
+				~GradeTooHighException() throw() {};
+		};
+	
+		class GradeTooLowException : public std::exception
+		{
+			private:
+				std::string _msg;
+			public:
+				GradeTooLowException(std::string msg) : _msg(msg) {};
+				virtual const char *what() const throw() {return (_msg.c_str());}
+				~GradeTooLowException() throw() {};
+		};
 		
-};
+	};
+	
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
 
 #endif

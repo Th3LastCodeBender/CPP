@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:45:22 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/10 19:00:19 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/11/29 15:01:40 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Bureaucrat::Bureaucrat(int grade) : name("default"), grade(grade)
 	DBG_MSG("Bureaucrat constructor called");
 
 	if (this->grade < 1)
-		throw std::out_of_range(name + " Grade is too high!\n");
+		throw GradeTooHighException(name + " Grade is too high!\n");
 	if(this->grade > 150)
-		throw std::out_of_range(name + " Grade is too low!\n");
+		throw GradeTooLowException(name + " Grade is too low!\n");
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
@@ -35,9 +35,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 	if (name.empty())
 		throw std::out_of_range("empty name brotha!\n");
 	if (this->grade < 1)
-		throw std::out_of_range(name + " Grade is too high!\n");
+		throw GradeTooHighException(name + " Grade is too high!\n");
 	if(this->grade > 150)
-		throw std::out_of_range(name + " Grade is too low!\n");
+		throw GradeTooLowException(name + " Grade is too low!\n");
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &obj)
@@ -59,12 +59,12 @@ Bureaucrat::~Bureaucrat()
 	DBG_MSG("Bureaucrat destructor called");
 }
 
-int	Bureaucrat::getGrade()
+int	Bureaucrat::getGrade() const
 {
 	return (this->grade);
 }
 
-std::string	Bureaucrat::getName()
+const std::string	Bureaucrat::getName() const
 {
 	return (this->name);
 }
@@ -73,22 +73,22 @@ void	Bureaucrat::incrementGrade()
 {
 	this->grade--;
 	if (this->grade < 1)
-		throw std::out_of_range(name + " Post-increment grade is too high!\n");
+		throw GradeTooHighException(name + " Post-increment grade is too high!\n");
 	if(this->grade > 150)
-		throw std::out_of_range(name + " Post-increment grade is too low! (wut?)\n");
+		throw GradeTooLowException(name + " Post-increment grade is too low! (wut?)\n");
 }
 
 void	Bureaucrat::decrementGrade()
 {
 	this->grade++;
 	if (this->grade < 1)
-		throw std::out_of_range(name + " Post-decrement grade is too high! (wut?)\n");
+		throw GradeTooHighException(name + " Post-decrement grade is too high! (wut?)\n");
 	if(this->grade > 150)
-		throw std::out_of_range(name + " Post-decrement grade is too low!\n");
+		throw GradeTooLowException(name + " Post-decrement grade is too low!\n");
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)
 {
-	os << obj.name << ", bureaucrat grade " << obj.grade << ".";
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 	return (os);
 }
