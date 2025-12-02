@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:42:44 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/29 16:17:39 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:05:16 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Form::Form(const Form &obj) : _name(obj.getName()), _gradeToSign(obj.getGradeToS
 	DBG_MSG("Copy constructor called!");
 }
 
-Form &Form::operator=(const Form &obj) //: _name(obj.getName()), _gradeToExec(obj.getGradeToExec()), _gradeToSign(obj.getGradeToSign())
+Form &Form::operator=(const Form &obj)
 {
 	DBG_MSG("Copy operator called!");
 	(void)obj;

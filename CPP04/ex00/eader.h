@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/11/10 15:55:24 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:38:17 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 #include <fstream>
 #include <sstream>
 #include <climits>
-#define public public
-#define protected public
-#define private private
 #define DEBUG 0
 #define EEGG 0
 #define MSG(msg) (std::cout << (msg) << std::endl)
