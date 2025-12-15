@@ -4,7 +4,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -g
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp 
+SRCS = main.cpp ScalarConverter.cpp
 
 all: $(NAME)
 
@@ -20,7 +20,7 @@ fclean:
 re: fclean all
 
 run: re
-	clear ; ./$(NAME)
+	clear ; ./$(NAME) 123
 
 val: $(NAME)
 	clear ; valgrind ./$(NAME)

@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:56:40 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/15 13:27:25 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/15 19:20:49 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class ScalarConverter {
 		{
 			public:
 				SpecialCaseException(){};
-				virtual const char *what() const throw() { return ; }
+				virtual const char *what() const throw() { return NULL; }
 				~SpecialCaseException() throw() {};
 		};
 

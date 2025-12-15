@@ -6,75 +6,34 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:57:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/15 15:38:24 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/15 19:24:11 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include "ScalarConverterUtils.hpp"
 
 ScalarConverter::ScalarConverter(){}
 
-ScalarConverter::ScalarConverter(const ScalarConverter &obj){}
+ScalarConverter::ScalarConverter(const ScalarConverter &obj){(void)obj;}
 
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
 {
+	(void)obj;
 	return (*this);
 }
 
 ScalarConverter::~ScalarConverter(){}
 
-bool	specialCases(const std::string &literal)
-{
-	if (literal.size() == 1 && std::isdigit(literal[0]) == false)
-	{
-		std::cout << "char: " << literal << std::endl;
-		std::cout << "int: " << "Not displayable" << std::endl;
-		std::cout << "float: " << "Not displayable" << std::endl;
-		std::cout << "double: " << "Not displayable" << std::endl;
-		return (true);
-	}
-	else if (literal.compare("nan") || literal.compare("nanf"))
-	{
-		std::cout << "char: " << "impossible" << std::endl;
-		std::cout << "int: " << "impossible" << std::endl;
-		std::cout << "float: " << "nanf" << std::endl;
-		std::cout << "double: " << "nan" << std::endl;
-		return(true);
-	}
-	else if (literal.compare("-inf") || literal.compare("-inff"))
-	{
-		std::cout << "char: " << "impossible" << std::endl;
-		std::cout << "int: " << "impossible" << std::endl;
-		std::cout << "float: " << "-inff" << std::endl;
-		std::cout << "double: " << "-inf" << std::endl;
-		return(true);
-	}
-	else if (literal.compare("+inf") || literal.compare("+inff"))
-	{
-		std::cout << "char: " << "impossible" << std::endl;
-		std::cout << "int: " << "impossible" << std::endl;
-		std::cout << "float: " << "+inff" << std::endl;
-		std::cout << "double: " << "+inf" << std::endl;
-		return(true);
-	}	
-}
+
 void	inputParsing(const std::string &literal)
 {
 	if (specialCases(literal) == true)
 		throw ScalarConverter::SpecialCaseException();
-	// else
-		// formatParsing(literal);
+	else
+		formatParsing(literal);
 }
 
-// 231a
-// a31
-// 123ff
-// 132.123ff
-// 12f43
-// 12..43
-// 12.4.3
-// .12
-// 12.
 
 void	ScalarConverter::convert(const std::string &literal)
 {
@@ -86,6 +45,18 @@ void	ScalarConverter::convert(const std::string &literal)
 		std::cerr << e.what() << '\n';	
 	}
 	// print the values
-	// std::cout << toFloat(literal)
+	// printLiteral(literal);
 	
 }
+// 231a
+// a31
+// 123ff
+// 132.123ff
+// 12..43
+// 12.4.3
+// .12
+// 12.
+// f23
+// 12f43
+// 123f.f
+// 123.f
