@@ -6,13 +6,13 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 19:28:54 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/15 19:28:55 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:18:39 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverterUtils.hpp"
 
-bool specialCases(const std::string &literal)
+bool specialParsingCases(const std::string &literal)
 {
 	if (literal.size() == 1 && std::isdigit(literal[0]) == false)
 	{
@@ -97,7 +97,7 @@ bool dotAtEnd(const std::string &literal)
 {
 	if (literal.empty())
 		throw ScalarConverter::FormatParsingException("Empty literal received by dotAtEnd!\n");
-	else if (literal.back() == '.')
+	else if (literal[literal.size() - 1] == '.')
 		return (true);
 	else
 		return (false);
@@ -117,7 +117,7 @@ bool fAtEnd(const std::string &literal)
 {
 	if (literal.empty())
 		throw ScalarConverter::FormatParsingException("Empty literal received by fAtEnd!\n");
-	else if (literal.back() == 'f')
+	else if (literal[literal.size() - 1] == 'f')
 		return (true);
 	else
 		return (false);
@@ -161,5 +161,76 @@ void formatParsing(const std::string &literal)
 	{
 		throw ScalarConverter::FormatParsingException("Passed a rational parameter with the dot near the \"f\"!\n");
 	}
+}
+
+// EXECUTION FUNCTIONS
+
+bool	specialExecutionCases(const std::string &literal)
+{
+	(void)literal;
+	return false;
+}
+
+void	execConversion(const std::string literal)
+{
+	if (literal.find('.') != std::string::npos && literal.find('f') != std::string::npos)
+	{
+		std::string s = literal;
+		if (!s.empty() && s[s.size() - 1] == 'f')
+			s.erase(s.size() - 1);
+		char *end = 0;
+		
+		float originalValue = std::strtof(s.c_str(), &end);
+		if (end == s.c_str() || (end && *end != '\0'))
+		{
+			throw ScalarConverter::ExecutionException("Error during float conversion of the string!\n");
+			return;
+		}
+		char   charValue = static_cast<char>(originalValue);
+		int    intValue = static_cast<int>(originalValue);
+		double doubleValue = static_cast<double>(originalValue);
+		
+		ToPrint values(charValue, intValue, originalValue, doubleValue);
+		std::cout << values;
+	}
+	else if (literal.find('.') != std::string::npos && literal.find('f') == std::string::npos)
+	{
+		char *end = 0;
+		double originalValue = std::strtod(literal.c_str(), &end);
+		if (end == literal.c_str() || (end && *end != '\0'))
+		{
+			throw ScalarConverter::ExecutionException("Error during double conversion of the string!\n");
+			return;
+		}
+		char  charValue = static_cast<char>(originalValue);
+		int   intValue = static_cast<int>(originalValue);
+		float floatValue = static_cast<float>(originalValue);
+		
+		ToPrint values(charValue, intValue, floatValue, originalValue);
+		std::cout << values;
+	}
+	else
+	{
+		char	*end = 0;
+		long	lval = ::strtol(literal.c_str(), &end, 10);
+		if (end == literal.c_str() || (end && *end != '\0'))
+		{
+			throw ScalarConverter::ExecutionException("Error during int conversion of the string!\n");
+			return;
+		}
+		if (lval < std::numeric_limits<int>::min() || lval > std::numeric_limits<int>::max())
+		{
+			throw ScalarConverter::ExecutionException("Integer out of range!\n");
+			return;
+		}
+		int		originalValue = static_cast<int>(lval);
+		char 	charValue = static_cast<char>(originalValue);
+		float	floatValue = static_cast<float>(originalValue);
+		double 	doubleValue = static_cast<double>(originalValue);
+
+		ToPrint values(charValue, originalValue, floatValue, doubleValue);
+		std::cout << values;
+	}
+	
 }
 

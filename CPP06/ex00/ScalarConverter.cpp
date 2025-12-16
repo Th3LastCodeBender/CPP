@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:57:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/15 19:24:11 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:12:01 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,32 @@ ScalarConverter::~ScalarConverter(){}
 
 void	inputParsing(const std::string &literal)
 {
-	if (specialCases(literal) == true)
+	if (specialParsingCases(literal) == true)
 		throw ScalarConverter::SpecialCaseException();
 	else
 		formatParsing(literal);
 }
 
+void	printLiteral(const std::string &literal)
+{
+	if (specialExecutionCases(literal) == true)
+		throw ScalarConverter::SpecialCaseException();
+	else
+		execConversion(literal);
+	
+}
 
 void	ScalarConverter::convert(const std::string &literal)
 {
-	// check the string input
 	try{
+		// check the string input
 		inputParsing(literal);
+		// print the string
+		printLiteral(literal);
 	}
 	catch(const std::exception& e){
 		std::cerr << e.what() << '\n';	
 	}
-	// print the values
-	// printLiteral(literal);
 	
 }
 // 231a

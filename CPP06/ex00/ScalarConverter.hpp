@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:56:40 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/15 19:20:49 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:19:43 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,15 @@ class ScalarConverter {
 				FormatParsingException(std::string msg) : _msg(msg) {};
 				virtual const char *what() const throw() {return (_msg.c_str());}
 				~FormatParsingException() throw() {};
+		};
+		class ExecutionException : public std::exception
+		{
+			private:
+				std::string _msg;
+			public:
+				ExecutionException(std::string msg) : _msg(msg) {};
+				virtual const char *what() const throw() {return (_msg.c_str());}
+				~ExecutionException() throw() {};
 		};
 }; 
 

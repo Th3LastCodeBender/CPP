@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/01 16:38:09 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:16:11 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 #include <sstream>
 #include <climits>
 #include <stdexcept>
+#include <cfloat>
+#include <cstdlib>
+#include <limits>
 #define DEBUG 0
 #define EEGG 0
 #define MSG(msg) (std::cout << (msg) << std::endl)

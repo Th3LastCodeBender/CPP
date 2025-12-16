@@ -4,7 +4,10 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -g
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp ScalarConverter.cpp
+SRCS = main.cpp ScalarConverter.cpp ScalarConverterUtils.cpp ToPrint.cpp
+
+# Allow passing CLI args like: make run 12 23 abc
+RUN_ARGS := $(filter-out $@,$(MAKECMDGOALS))
 
 all: $(NAME)
 
@@ -19,11 +22,18 @@ fclean:
 
 re: fclean all
 
-run: re
-	clear ; ./$(NAME) 123
+run: $(NAME)
+	clear ; ./$(NAME) $(RUN_ARGS)
 
 val: $(NAME)
 	clear ; valgrind ./$(NAME)
 
-PHONY: all clean fclean run
+gdb: $(NAME)
+	clear ; gdb --args ./$(NAME) $(RUN_ARGS)
+
+# Swallow extra goals used as args to 'run'
+%:
+	@:
+
+.PHONY: all clean fclean run
 .SILENT:

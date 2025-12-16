@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 19:15:33 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/15 19:24:22 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:08:00 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,21 @@
 
 #include "eader.h"
 #include "ScalarConverter.hpp"
+#include "ToPrint.hpp"
 
-bool specialCases(const std::string &literal);
-bool charFinder(const std::string &literal);
-bool moreThanOneChar(const std::string &literal, char c);
-bool dotAtBeginning(const std::string &literal);
-bool dotAtEnd(const std::string &literal);
-bool fAtBeginning(const std::string &literal);
-bool fAtEnd(const std::string &literal);
-bool dotNearF(const std::string &literal);
-void formatParsing(const std::string &literal);
+// Parsing functions
 
+bool	specialParsingCases(const std::string &literal);
+bool	charFinder(const std::string &literal);
+bool	moreThanOneChar(const std::string &literal, char c);
+bool	dotAtBeginning(const std::string &literal);
+bool	dotAtEnd(const std::string &literal);
+bool	fAtBeginning(const std::string &literal);
+bool	fAtEnd(const std::string &literal);
+bool	dotNearF(const std::string &literal);
+void	formatParsing(const std::string &literal);
+
+// Execution functions
+bool	specialExecutionCases(const std::string &literal);
+void	execConversion(const std::string literal);
 #endif
