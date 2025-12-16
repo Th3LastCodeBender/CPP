@@ -7,7 +7,8 @@ CPPFLAGS = -std=c++98
 SRCS = main.cpp ScalarConverter.cpp ScalarConverterUtils.cpp ToPrint.cpp
 
 # Allow passing CLI args like: make run 12 23 abc
-RUN_ARGS := $(filter-out $@,$(MAKECMDGOALS))
+# Exclude known make targets from being forwarded
+RUN_ARGS := $(filter-out run val all clean fclean gdb re,$(MAKECMDGOALS))
 
 all: $(NAME)
 
@@ -26,14 +27,15 @@ run: $(NAME)
 	clear ; ./$(NAME) $(RUN_ARGS)
 
 val: $(NAME)
-	clear ; valgrind ./$(NAME)
+	clear ; valgrind ./$(NAME) $(RUN_ARGS)
 
 gdb: $(NAME)
 	clear ; gdb --args ./$(NAME) $(RUN_ARGS)
 
-# Swallow extra goals used as args to 'run'
+.PHONY: all clean fclean run val gdb
+
+#regola che non fa interpretare come target le parole non riconosciute come comandi make
 %:
 	@:
 
-.PHONY: all clean fclean run
 .SILENT:

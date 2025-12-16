@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:57:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/16 14:12:01 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:02:29 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
 ScalarConverter::~ScalarConverter(){}
 
 
-void	inputParsing(const std::string &literal)
+void	literalParsing(const std::string &literal)
 {
 	if (specialParsingCases(literal) == true)
 		throw ScalarConverter::SpecialCaseException();
@@ -34,22 +34,26 @@ void	inputParsing(const std::string &literal)
 		formatParsing(literal);
 }
 
-void	printLiteral(const std::string &literal)
+void	literalConversion(const std::string &literal)
 {
-	if (specialExecutionCases(literal) == true)
-		throw ScalarConverter::SpecialCaseException();
+	if (literal.find('.') != std::string::npos && literal.find('f') != std::string::npos)
+		execFloatCase(literal);
+	else if ((literal.find('.') != std::string::npos ||
+			 literal.find('e') != std::string::npos ||
+			 literal.find('E') != std::string::npos) && 
+			 literal.find('f') == std::string::npos)
+		execDoubleCase(literal);
 	else
-		execConversion(literal);
-	
+		execIntCase(literal);
 }
 
 void	ScalarConverter::convert(const std::string &literal)
 {
 	try{
 		// check the string input
-		inputParsing(literal);
+		literalParsing(literal);
 		// print the string
-		printLiteral(literal);
+		literalConversion(literal);
 	}
 	catch(const std::exception& e){
 		std::cerr << e.what() << '\n';	

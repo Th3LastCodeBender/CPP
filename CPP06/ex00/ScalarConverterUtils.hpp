@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 19:15:33 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/16 14:08:00 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:02:29 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ScalarConverter.hpp"
 #include "ToPrint.hpp"
 
-// Parsing functions
+// -----------------------Parsing functions---------------------------
 
 bool	specialParsingCases(const std::string &literal);
 bool	charFinder(const std::string &literal);
@@ -29,7 +29,10 @@ bool	fAtEnd(const std::string &literal);
 bool	dotNearF(const std::string &literal);
 void	formatParsing(const std::string &literal);
 
-// Execution functions
-bool	specialExecutionCases(const std::string &literal);
-void	execConversion(const std::string literal);
+//------------------ Execution functions------------------------
+
+void	literalConversion(const std::string &literal);
+void	execFloatCase(const std::string &literal);
+void	execDoubleCase(const std::string &literal);
+void	execIntCase(const std::string &literal);
 #endif
