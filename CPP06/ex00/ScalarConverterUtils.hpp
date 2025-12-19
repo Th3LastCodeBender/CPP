@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 19:15:33 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/16 17:02:29 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/19 16:18:49 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ void	literalConversion(const std::string &literal);
 void	execFloatCase(const std::string &literal);
 void	execDoubleCase(const std::string &literal);
 void	execIntCase(const std::string &literal);
+
 #endif

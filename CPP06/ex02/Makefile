@@ -4,7 +4,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -g
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp
 
 all: $(NAME)
 
