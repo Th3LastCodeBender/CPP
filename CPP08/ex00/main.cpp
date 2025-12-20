@@ -1,44 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 15:04:15 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/20 15:47:59 by lparolis         ###   ########.fr       */
+/*   Created: 2025/12/15 17:56:29 by lparolis          #+#    #+#             */
+/*   Updated: 2025/12/20 15:20:34 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "eader.h"
+#include "template.hpp"
 
-#ifndef Serializer_HPP
-#define Serializer_HPP
 
-#define uintptr_t unsigned long
-
-struct Data;
-
-class Serializer
+int main(void)
 {
-	private:
 
-		Serializer();
-		Serializer(const Serializer& other);
-		Serializer& operator=(const Serializer& other);
-		~Serializer();
-
-	public:
-
-	
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
-};
-
-struct Data
-{
-	std::string content;
-	int			id; 
-};
-
-#endif // Serializer_HPP
+}
