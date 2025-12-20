@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:57:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/16 17:02:29 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/20 11:04:59 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	ScalarConverter::convert(const std::string &literal)
 	catch(const std::exception& e){
 		std::cerr << e.what() << '\n';	
 	}
-	
 }
 // 231a
 // a31
