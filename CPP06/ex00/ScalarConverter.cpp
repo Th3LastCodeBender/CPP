@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:57:29 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/20 11:04:59 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/20 15:53:34 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ScalarConverter::~ScalarConverter(){}
 
 
 void	literalParsing(const std::string &literal)
-{
+{	
 	if (specialParsingCases(literal) == true)
 		throw ScalarConverter::SpecialCaseException();
 	else

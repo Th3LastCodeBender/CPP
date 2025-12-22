@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/20 11:30:46 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/22 17:40:42 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 #include <cmath>
 #include <utility>
 #include <cstddef>
+#include <vector>
+#include <algorithm>
 #define DEBUG 0
 #define EEGG 0
 #define MSG(msg) (std::cout << (msg) << std::endl)
