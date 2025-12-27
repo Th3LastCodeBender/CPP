@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:30:36 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/22 18:18:35 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/27 16:17:06 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ class Span
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 
-		class CapacityExceededException : public std::exception
+		class SpanException : public std::exception
 		{
 			private:
 				std::string _msg;
 			public:
-				CapacityExceededException(std::string msg): _msg(msg) {};
+				SpanException(std::string msg): _msg(msg) {};
 				virtual const char *what() const throw() {return (_msg.c_str());}
-				~CapacityExceededException() throw() {};
+				~SpanException() throw() {};
 		};
 };
 

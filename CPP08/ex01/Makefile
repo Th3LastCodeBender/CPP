@@ -4,7 +4,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -g
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 
 # Allow passing CLI args like: make run 12 23 abc
 # Exclude known make targets from being forwarded

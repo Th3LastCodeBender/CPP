@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/22 17:40:42 by lparolis         ###   ########.fr       */
+/*   Updated: 2025/12/27 16:56:16 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 #include <vector>
 #include <algorithm>
 #define DEBUG 0
-#define EEGG 0
+#define INFO 0
 #define MSG(msg) (std::cout << (msg) << std::endl)
 
 #if defined(DEBUG) && DEBUG
@@ -39,10 +39,10 @@
 
 #endif
 
-#if defined(EEGG) && EEGG
-  #define EEGG_MSG(msg) (std::cout << (msg) << std::endl);
+#if defined(INFO) && INFO
+  #define INFO_MSG(msg) (std::cout << (msg) << std::endl)
 #else
-  #define EEGG_MSG(msg) ((void)0)
+  #define INFO_MSG(msg) ((void)0)
 
 #endif
 
