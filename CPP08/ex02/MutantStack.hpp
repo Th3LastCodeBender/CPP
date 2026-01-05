@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:26:18 by lparolis          #+#    #+#             */
-/*   Updated: 2026/01/05 22:38:26 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/01/05 22:42:20 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,23 @@ class MutantStack : public std::stack<T>
 	private:
 
 	public:
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
 		MutantStack();
 		MutantStack(const MutantStack& other);
 		MutantStack& operator=(const MutantStack& other);
 		~MutantStack();
 
-		typename std::stack<T>::container_type::iterator begin();
-		typename std::stack<T>::container_type::iterator end();
+		iterator begin();
+		iterator end();
 
-		typename std::stack<T>::container_type::iterator begin() const;
-		typename std::stack<T>::container_type::iterator end() const;
+		const_iterator begin() const;
+		const_iterator end() const;
 };
+
+
+#include "MutantStack.tpp"
 
 
 #endif

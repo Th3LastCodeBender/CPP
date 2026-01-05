@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:26:24 by lparolis          #+#    #+#             */
-/*   Updated: 2026/01/05 22:38:05 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/01/05 22:46:29 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,25 @@ MutantStack<T>::~MutantStack()
 }
 
 template<typename T>
-typename std::stack<T>::container_type::iterator MutantStack<T>::begin()
+typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
 	return this->c.begin();
 }
 
 template<typename T>
-typename std::stack<T>::container_type::iterator MutantStack<T>::end()
+typename MutantStack<T>::iterator MutantStack<T>::end()
 {
 	return this->c.end();
 }
 
 template<typename T>
-typename std::stack<T>::container_type::iterator MutantStack<T>::begin() const
+typename MutantStack<T>::const_iterator MutantStack<T>::begin() const
 {
 	return this->c.begin();
 }
 
 template<typename T>
-typename std::stack<T>::container_type::iterator MutantStack<T>::end() const
+typename MutantStack<T>::const_iterator MutantStack<T>::end() const
 {
 	return this->c.end();
 }
