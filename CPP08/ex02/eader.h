@@ -6,12 +6,12 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2025/12/20 11:30:46 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:56:56 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EADER_H
-# define EADER_H
+#define EADER_H
 
 #include <iostream>
 #include <string>
@@ -26,6 +26,8 @@
 #include <cmath>
 #include <utility>
 #include <cstddef>
+#include <stack>
+#include <deque>
 #define DEBUG 0
 #define EEGG 0
 #define MSG(msg) (std::cout << (msg) << std::endl)
