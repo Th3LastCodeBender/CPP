@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:30:52 by lparolis          #+#    #+#             */
-/*   Updated: 2026/01/05 18:33:53 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/01/09 15:10:13 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Span::Span(unsigned int n)
 	this->_max_size = n;
 }
 
-Span::Span(const Span &obj)#include "template.hpp"
+Span::Span(const Span &obj)
 {
 	DBG_MSG("Span copy constructor called");
 	
@@ -99,11 +99,7 @@ unsigned int	Span::shortestSpan()
 	{
 		unsigned int diff = static_cast<unsigned int>(std::abs(*next - *it));
 		if (diff < interval)
-		{
 			interval = diff;
-		}
-		
 	}
-
 	return (interval);
 }
