@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 17:00:47 by lparolis          #+#    #+#             */
-/*   Updated: 2026/01/09 17:19:24 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/01/14 14:06:40 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ class BitcoinExchange
 {
 	private:
 
-		std::map<std::string, double> exchangeTable;
+		std::map<std::string, float> exchangeTable;
+		std::map<std::string, float> input;
+
+		void	lineParsing(std::string buffer);
+		void	inputParsing(std::string buffer);
 
 	public:
 
@@ -28,6 +32,8 @@ class BitcoinExchange
 		BitcoinExchange& operator=(const BitcoinExchange& other);
 		~BitcoinExchange();
 
+		void	inputProcess(std::string inputPath);
+		
 		class ParsingException : public std::exception
 		{
 			private:
