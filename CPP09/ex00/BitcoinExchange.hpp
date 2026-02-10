@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 17:00:47 by lparolis          #+#    #+#             */
-/*   Updated: 2026/01/14 14:06:40 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:04:26 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 #define 	BITCOINEXCHANGE_HPP
 
 #include "eader.h"
+#include "utils.hpp"
 
 class BitcoinExchange
 {
 	private:
 
-		std::map<std::string, float> exchangeTable;
-		std::map<std::string, float> input;
+		std::map<std::string, float>	exchangeTable;
+		std::map<std::string, float>	input;
+		std::string						date;
+		std::string						value;
+		long int						iYear;
+		long int						iMonth;
+		long int						iDay;
 
-		void	lineParsing(std::string buffer);
-		void	inputParsing(std::string buffer);
+		void	inputParsing(std::string &buffer, std::string dest, char separator);
+		void	splitDateFromBtc(std::string &buffer, char separator);
+		void	dateParser(std::string &date);
+		float	displayAmount();
 
 	public:
 

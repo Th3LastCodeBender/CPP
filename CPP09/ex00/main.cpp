@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 15:50:58 by lparolis          #+#    #+#             */
-/*   Updated: 2026/01/14 14:30:02 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/02/10 11:18:27 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int main(int argc, char **argv)
 	BitcoinExchange test;
 
 	test.inputProcess(argv[1]);
-	(void)argc;
+	
 	return (0);
 }
