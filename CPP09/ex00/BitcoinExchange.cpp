@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 17:10:42 by lparolis          #+#    #+#             */
-/*   Updated: 2026/02/10 19:06:08 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/02/23 23:08:26 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ BitcoinExchange::BitcoinExchange()
 	while (std::getline(table, buffer))
 	{
 		inputParsing(buffer, "exchangeTable", ',');
-		++line;
+		++line;		
 	}
 }
 
@@ -53,7 +53,10 @@ BitcoinExchange::~BitcoinExchange()
 void	 BitcoinExchange::splitDateFromBtc(std::string &buffer, char separator)
 {
 	size_t sepPos = buffer.find(separator);
-	this->date = buffer.substr(0, sepPos );
+	if (separator == '|')
+		this->date = buffer.substr(0, sepPos - 1);
+	else
+		this->date = buffer.substr(0, sepPos);	
 	if (sepPos + 1 != buffer.size() && separator == '|')
 		this->value = buffer.substr(sepPos + 2, buffer.size() - (sepPos + 2));
 	else if (sepPos != buffer.size() && separator == ',')
@@ -104,26 +107,23 @@ void	BitcoinExchange::inputParsing(std::string &buffer, std::string dest, char s
 		std::cout << "Added line " << line << " in " << dest << " map" << std::endl;
 }
 
-float	BitcoinExchange::displayAmount()
+float	BitcoinExchange::displayAmount(std::string date)
 {
-    std::map<std::string, float>::const_iterator it;
-
-    it = this->exchangeTable.lower_bound(this->input.);
-
-    if (it == this->exchangeTable.end())
+	std::map<std::string, float>::iterator index;
+	
+	index = this->exchangeTable.find(date);
+	if (index == this->exchangeTable.end())
+		index = this->exchangeTable.lower_bound(date);
+    if (index == this->exchangeTable.end())
     {
-        --it;
-        return it->second;
+        --index;
+        return (index->second);
     }
-
-    if (it->first == date)
-        return it->second;
-
-    if (it == this->exchangeTable.begin())
+	else if (index->first == date)
+        return (index->second);
+	else if (index == this->exchangeTable.begin())
         throw ParsingException("No earlier date available for exchange rate");
-
-    --it;
-    return it->second;
+	return (index->second);
 }
 
 void	BitcoinExchange::inputProcess(std::string inputPath)
@@ -140,10 +140,23 @@ void	BitcoinExchange::inputProcess(std::string inputPath)
 		++line;
 	}
 	std::map<std::string, float>::const_iterator it = this->input.begin();
-	std::cout << "VALORE: " << displayAmount() << std::endl;
 	while (it != this->input.end())
 	{
-		// displayAmount();
+		std::cout << it->first << " => " << it->second << " => " << it->second * displayAmount(it->first) << std::endl;
 		++it;
 	}
 }
+
+// $> ./btc
+// Error: could not open file.
+// $> ./btc input.txt
+// 2011-01-03 => 3 = 0.9
+// 2011-01-03 => 2 = 0.6
+// 2011-01-03 => 1 = 0.3
+// 2011-01-03 => 1.2 = 0.36
+// 2011-01-09 => 1 = 0.32
+// Error: not a positive number.
+// Error: bad input => 2001-42-42
+// 2012-01-11 => 1 = 7.1
+// Error: too large a number.
+// $>
