@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 17:10:42 by lparolis          #+#    #+#             */
-/*   Updated: 2026/02/23 23:08:26 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/02/24 22:26:14 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,50 +100,61 @@ void	BitcoinExchange::inputParsing(std::string &buffer, std::string dest, char s
 	if (checkValueChars(line, this->value) == false || checkValueLimits(line, value, separator) == false)
 		return;
 	if (separator == '|')
+	{
 		this->input[this->date] = convertValue(this->value);
+		displayAmount(this->date);
+	}
 	else if (separator == ',')
 		this->exchangeTable[this->date] = convertValue(this->value);
 	if (DEBUG)
 		std::cout << "Added line " << line << " in " << dest << " map" << std::endl;
 }
 
-float	BitcoinExchange::displayAmount(std::string date)
+void	BitcoinExchange::displayAmount(std::string date)
 {
 	std::map<std::string, float>::iterator index;
+	std::map<std::string, float>::iterator input;
 	
 	index = this->exchangeTable.find(date);
+	input = this->input.find(date);
 	if (index == this->exchangeTable.end())
 		index = this->exchangeTable.lower_bound(date);
     if (index == this->exchangeTable.end())
     {
         --index;
-        return (index->second);
+		std::cout << index->first << " => " << index->second << " => " << index->second * input->second << std::endl;
+        return ;
     }
 	else if (index->first == date)
-        return (index->second);
+	{
+		std::cout << index->first << " => " << index->second << " => " << index->second * input->second << std::endl;
+        return ;
+	}
 	else if (index == this->exchangeTable.begin())
         throw ParsingException("No earlier date available for exchange rate");
-	return (index->second);
+	std::cout << input->first << " => " << index->second << " => " << index->second * input->second << std::endl;
 }
 
 void	BitcoinExchange::inputProcess(std::string inputPath)
 {
-	std::ifstream	input(inputPath.c_str());
-	std::string		buffer;
-
-	if (input.fail())
-		throw ParsingException("Failed to open the .txt input file!");
-	line = 1;
-	while (std::getline(input, buffer))
+	try
 	{
-		inputParsing(buffer, "input", '|');
-		++line;
+		
+		std::ifstream	input(inputPath.c_str());
+		std::string		buffer;
+		
+		if (input.fail())
+			throw ParsingException("Failed to open the .txt input file!");
+		line = 1;
+		while (std::getline(input, buffer))
+		{
+			inputParsing(buffer, "input", '|');
+			++line;
+		}
 	}
-	std::map<std::string, float>::const_iterator it = this->input.begin();
-	while (it != this->input.end())
+	catch(const std::exception& e)
 	{
-		std::cout << it->first << " => " << it->second << " => " << it->second * displayAmount(it->first) << std::endl;
-		++it;
+		std::cerr << e.what() << '\n';
 	}
 }
 

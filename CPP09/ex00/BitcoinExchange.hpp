@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 17:00:47 by lparolis          #+#    #+#             */
-/*   Updated: 2026/02/23 22:18:20 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/02/24 22:14:36 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class BitcoinExchange
 		void	inputParsing(std::string &buffer, std::string dest, char separator);
 		void	splitDateFromBtc(std::string &buffer, char separator);
 		void	dateParser(std::string &date);
-		float	displayAmount(std::string date);
+		void	displayAmount(std::string date);
 
 	public:
 
