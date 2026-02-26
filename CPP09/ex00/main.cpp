@@ -17,8 +17,8 @@ int main(int argc, char **argv)
 {
 	if (argc < 2 || argv[1][0] == 0)
 	{
-		std::cout << "Hello hello?? Missing something? No im not talking about your brain, that's always missing\n";
-		return (0);
+		std::cerr << "Error: could not open file." << std::endl;
+		return (1);
 	}
 	
 	BitcoinExchange test;

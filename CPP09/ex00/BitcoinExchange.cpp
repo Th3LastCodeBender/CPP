@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 17:10:42 by lparolis          #+#    #+#             */
-/*   Updated: 2026/02/24 22:26:14 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/02/26 22:00:05 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ BitcoinExchange::BitcoinExchange()
 	std::string		buffer;
 
 	if (table.fail())
-		throw ParsingException("Failed to open the .csv file!");
+		throw ParsingException("Error: could not open file.");
 	line = 1;
 	while (std::getline(table, buffer))
 	{
@@ -82,22 +82,20 @@ void	BitcoinExchange::inputParsing(std::string &buffer, std::string dest, char s
 		return;
 	if(buffer.empty() || buffer.find(separator) == std::string::npos)
 	{
-		std::cout << "Skipped " << dest << " line [" << line << "] Cause of bad data format\n";
+		std::cout << "Error: bad input => " << buffer << std::endl;
 		return;
 	}
 	splitDateFromBtc(buffer, separator);
-	if ((this->date.find('-') == std::string::npos || 
-		this->date.find_first_of('-') == this->date.find_last_of('-')) && 
-		buffer != "date | value")
+	if ((this->date.find('-') == std::string::npos || this->date.find_first_of('-') == this->date.find_last_of('-')) && buffer != "date | value")
 	{
-		std::cout << "Skipped  " << dest << " line [" << line << "] Cause of bad date format\n";
+		std::cout << "Error: bad input => " << this->date << std::endl;
 		return;
 	}
 	dateParser(this->date);
 	// std::cout << sYear << "|" << sMonth << "|" << sDay << std::endl;
-	if (dateChecker(line, this->iYear, this->iMonth, this->iDay) == false)
+	if (dateChecker(this->iYear, this->iMonth, this->iDay) == false)
 		return;
-	if (checkValueChars(line, this->value) == false || checkValueLimits(line, value, separator) == false)
+	if (checkValueChars(this->value) == false || checkValueLimits(value, separator) == false)
 		return;
 	if (separator == '|')
 	{
@@ -119,32 +117,31 @@ void	BitcoinExchange::displayAmount(std::string date)
 	input = this->input.find(date);
 	if (index == this->exchangeTable.end())
 		index = this->exchangeTable.lower_bound(date);
-    if (index == this->exchangeTable.end())
-    {
-        --index;
-		std::cout << index->first << " => " << index->second << " => " << index->second * input->second << std::endl;
-        return ;
-    }
+	if (index == this->exchangeTable.end())
+	{
+		--index;
+		std::cout << index->first << " => " << input->second << " = " << index->second * input->second << std::endl;
+		return ;
+	}
 	else if (index->first == date)
 	{
-		std::cout << index->first << " => " << index->second << " => " << index->second * input->second << std::endl;
-        return ;
+		std::cout << index->first << " => " << input->second << " = " << index->second * input->second << std::endl;
+		return ;
 	}
 	else if (index == this->exchangeTable.begin())
         throw ParsingException("No earlier date available for exchange rate");
-	std::cout << input->first << " => " << index->second << " => " << index->second * input->second << std::endl;
+	std::cout << input->first << " => " << input->second << " = " << index->second * input->second << std::endl;
 }
 
 void	BitcoinExchange::inputProcess(std::string inputPath)
 {
 	try
 	{
-		
 		std::ifstream	input(inputPath.c_str());
 		std::string		buffer;
 		
 		if (input.fail())
-			throw ParsingException("Failed to open the .txt input file!");
+			throw ParsingException("Error: could not open file.");
 		line = 1;
 		while (std::getline(input, buffer))
 		{
