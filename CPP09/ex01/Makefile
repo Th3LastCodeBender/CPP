@@ -1,10 +1,10 @@
-NAME = btc
+NAME = RPN
 
 CC = g++
 FLAGS = -Wall -Wextra -Werror -g -O0
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp BitcoinExchange.cpp utils.cpp
+SRCS = main.cpp RPN.cpp utils.cpp
 
 # Allow passing CLI args like: make run 12 23 abc
 # Exclude known make targets from being forwarded

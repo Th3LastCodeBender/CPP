@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2026/02/10 16:41:02 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:50:54 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,17 @@
 #include <vector>
 #include <algorithm>
 #include <map>
+#include <stack>
 #define DEBUG 0
 #define EEGG 0
 #define MSG(msg) (std::cout << (msg) << std::endl)
+
+size_t	count_operators(std::string input);
+size_t	count_digits(std::string input);
+bool  	are_chars_valid(std::string input);
+bool  	check_order(std::string input);
+bool	  is_valid_operator(char c);
+bool	  is_valid_char(char c);
 
 #if defined(DEBUG) && DEBUG
   #define DBG_MSG(msg) (std::cout << (msg) << std::endl)

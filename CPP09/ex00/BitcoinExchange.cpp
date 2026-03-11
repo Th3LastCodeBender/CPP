@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 17:10:42 by lparolis          #+#    #+#             */
-/*   Updated: 2026/02/26 22:00:05 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:09:37 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,4 +167,3 @@ void	BitcoinExchange::inputProcess(std::string inputPath)
 // Error: bad input => 2001-42-42
 // 2012-01-11 => 1 = 7.1
 // Error: too large a number.
-// $>
