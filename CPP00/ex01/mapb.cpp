@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 17:44:45 by lparolis          #+#    #+#             */
-/*   Updated: 2025/10/09 12:07:54 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/13 17:00:45 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,9 @@ int	main()
 	while (input.compare("EXIT") != 0)
 	{
 		if (input.compare("ADD") == 0)
-		{
 			giorgino.add_command();
-		}
 		else if (input.compare("SEARCH") == 0)
-		{
 			giorgino.search_command();
-		}
 		else
 		{
 			std::cout << std::endl;

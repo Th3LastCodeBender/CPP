@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:52:07 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/12 20:13:45 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:51:26 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ bool	argumentsParsing(int argc, char *argv[]);
 bool	mainParsing(int argc, char *argv[])
 {
 	if(argumentsParsing(argc, argv) == false)
-		return;
+		return (false);
 	// if()
+	return (true);
 }
 
 bool	argumentsParsing(int argc, char *argv[])
@@ -33,12 +34,10 @@ bool	argumentsParsing(int argc, char *argv[])
 		std::cerr << "Arguments Error: the program can only handle an even number of digits!" << std::endl;
 		return (false);
 	}
-	size_t digits_number = sizeof(argv) / sizeof(argv[0]);
-	for (size_t i = 0; i < digits_number; i++)
+	for (int i = 1; i < argc; i++)
 	{
 		if (valid_chars(argv[i]) == false)
 			return (false);
-		
 	}
-	
+	return (true);
 }
