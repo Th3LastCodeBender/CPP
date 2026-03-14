@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:52:07 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/13 11:51:26 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/14 21:53:52 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ bool	mainParsing(int argc, char *argv[])
 {
 	if(argumentsParsing(argc, argv) == false)
 		return (false);
-	// if()
 	return (true);
 }
 
@@ -29,9 +28,9 @@ bool	argumentsParsing(int argc, char *argv[])
 		std::cerr << "Arguments Error: not enough arguments passed!" << std::endl;
 		return (false);
 	}
-	else if (argc % 2 == 0)
+	else if (argc > 10000)
 	{
-		std::cerr << "Arguments Error: the program can only handle an even number of digits!" << std::endl;
+		std::cerr << "Arguments Error: wanna stay here all weeK?" << std::endl;
 		return (false);
 	}
 	for (int i = 1; i < argc; i++)

@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 20:04:39 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/13 17:37:00 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/14 18:55:31 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,19 +72,30 @@ void	print_vec_couples(std::vector<std::pair<int, int> > couples)
 	}
 	std::cout << "------------------------\n";
 }
+void	print_stl(std::vector<int> vect){print_stl(vect, "");}
 
-void	print_stl(std::vector<int> vect)
+void	print_stl(std::deque<int> deque){print_stl(deque, "");}
+
+void	print_stl(std::vector<int> vect, std::string msg)
 {
-	std::cout << "Before: ";
+	std::cout << msg;
 	for (std::vector<int>::iterator it = vect.begin(); it != vect.end(); it++)
 		std::cout << " " << *it;
 	std::cout << std::endl;
 }
 
-void	print_stl(std::deque<int> deque)
+void	print_stl(std::deque<int> deque, std::string msg)
 {
-	std::cout << "Before: ";
+	std::cout << msg;
 	for (std::deque<int>::iterator it = deque.begin(); it != deque.end(); it++)
 		std::cout << " " << *it;
 	std::cout << std::endl;
+}
+
+std::vector<int>	decrease(std::vector<int> vect)
+{
+	size_t size = vect.size();
+	for (size_t i = 0; i < size; i++)
+		vect[i]--;
+	return(vect);
 }
