@@ -41,9 +41,16 @@ std::vector<int>	decrease(std::vector<int> vect)
 	return(vect);
 }
 
-void	print_time(clock_t &start, clock_t &end, std::string stl, int elements)
+void	print_time(timespec &start, timespec &end, std::string stl, int elements)
 {
-	double duration_us = double(end - start) / CLOCKS_PER_SEC * 1e6;
+	long	sec = end.tv_sec - start.tv_sec;
+	long	nsec = end.tv_nsec - start.tv_nsec;
+	if (nsec < 0)
+	{
+		sec -= 1;
+		nsec += 1000000000L;
+	}
+	double	duration_us = (static_cast<double>(sec) * 1e9 + nsec) / 1e3;
 
 	std::cout	<< "Time to process a range of " 
 				<< elements

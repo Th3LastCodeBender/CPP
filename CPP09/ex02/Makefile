@@ -1,7 +1,7 @@
 NAME = PmergeMe
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g -O0
+FLAGS = -Wall -Wextra -Werror -g -O3
 CPPFLAGS = -std=c++98
 
 SRCS = main.cpp PmergeMe.cpp Parsing.cpp utils.cpp print_utils.cpp vector_sorting.cpp deque_sorting.cpp

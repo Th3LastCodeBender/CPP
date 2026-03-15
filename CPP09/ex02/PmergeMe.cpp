@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:10:43 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/15 18:29:43 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/15 19:04:26 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,16 @@ PmergeMe::~PmergeMe()
 void	PmergeMe::Sorting()
 {
 	print_stl(this->_vector, "Before: ");
-	clock_t start = clock();
+	timespec start;
+	timespec end;
+	clock_gettime(CLOCK_MONOTONIC, &start);
 	vectorAlgorithm(this->_vector);
-	clock_t end = clock();
+	clock_gettime(CLOCK_MONOTONIC, &end);
 	print_stl(this->_vector, "After: ");
 	print_time(start, end, "std::vector<int>", this->_elements);
 
-	print_stl(this->_deque, "Before: ");
-	start = clock();
+	clock_gettime(CLOCK_MONOTONIC, &start);
 	dequeAlgorithm(this->_deque);
-	end = clock();
-	print_stl(this->_deque, "After: ");
+	clock_gettime(CLOCK_MONOTONIC, &end);
 	print_time(start, end, "std::deque<int>", this->_elements);
 }
-
