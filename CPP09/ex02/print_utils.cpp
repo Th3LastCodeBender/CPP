@@ -41,9 +41,14 @@ std::vector<int>	decrease(std::vector<int> vect)
 	return(vect);
 }
 
-void	print_time(clock_t &start, clock_t &end, std::string stl)
+void	print_time(clock_t &start, clock_t &end, std::string stl, int elements)
 {
 	double duration_us = double(end - start) / CLOCKS_PER_SEC * 1e6;
 
-	std::cout << "Time to process a range of 5 elements with " << stl << " : " << duration_us << " us\n"; 
+	std::cout	<< "Time to process a range of " 
+				<< elements
+				<< " elements with "
+				<< stl << " : "
+				<< duration_us 
+				<< " us\n"; 
 }

@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:10:37 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/15 15:35:33 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/15 18:27:12 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 #include "eader.h"
 
-typedef std::vector<std::pair<int, int> > CoupVec;
-typedef std::vector<int>::iterator vecIt;
-
 class PmergeMe
 {
 	private:
 	
+		id_t				_elements;
 		std::vector<int>	_vector;
 		std::deque<int>		_deque; 
 

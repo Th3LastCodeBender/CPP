@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/15 16:35:04 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/15 18:27:20 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@
 #define DBGERR 1
 #define MSG(msg) (std::cout << (msg) << std::endl)
 
+typedef std::vector<std::pair<int, int> > CoupVec;
+typedef std::vector<int>::iterator        vecIt;
+
 bool	            valid_chars(char *string);
 bool	            mainParsing(int argc, char *argv[]);
 bool              convert_to_long(char *str, long &result, int line);
@@ -44,11 +47,17 @@ void	            print_stl(std::vector<int> vect);
 void	            print_stl(std::deque<int> deque);
 void	            print_stl(std::vector<int> vect, std::string msg);
 void	            print_stl(std::deque<int> deque, std::string msg);
-void              print_time(clock_t &start, clock_t &end, std::string stl);
-std::vector<int>	jacob_blocks(int range);
-std::vector<int>	decrease(std::vector<int> vect);
-std::vector<int>	jacob_series_limits(int range);
-std::vector<int>	first_jacob_part();
+void              print_time(clock_t &start, clock_t &end, std::string stl, int elements);
+
+void			          vectorAlgorithm(std::vector<int> &mainVec);
+std::vector<size_t>	jacob_insertion_order(size_t n);
+CoupVec			        reorder_pairs_by_max(const std::vector<int> &sorted_max, const CoupVec &pairs);
+void				        binary_insert_before_bound(std::vector<int> &vec, int value, size_t bound, std::vector<size_t> &max_positions);
+void				        create_pairs(CoupVec &pairs, const std::vector<int> vec);
+void				        check_for_struggler(bool has_straggler, int &straggler, std::vector<int> &vec);
+std::vector<int>	  create_max_chain(const CoupVec pairs);
+void				        handle_straggler(bool has_straggler, int straggler, std::vector<int> &vec);
+
 
 #if defined(DEBUG) && DEBUG
   #define DBG_MSG(msg) (std::cout << (msg) << std::endl)
