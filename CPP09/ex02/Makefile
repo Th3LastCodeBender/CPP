@@ -1,10 +1,10 @@
 NAME = PmergeMe
 
-CC = g++
+CC = c++
 FLAGS = -Wall -Wextra -Werror -g -O0
 CPPFLAGS = -std=c++98
 
-SRCS = main.cpp PmergeMe.cpp Parsing.cpp utils.cpp print_utils.cpp
+SRCS = main.cpp PmergeMe.cpp Parsing.cpp utils.cpp print_utils.cpp vector_sorting.cpp deque_sorting.cpp
 
 # Allow passing CLI args like: make run 12 23 abc
 # Exclude known make targets from being forwarded

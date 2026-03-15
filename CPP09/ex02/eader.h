@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/15 18:27:20 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/15 18:35:01 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 #include <stack>
 #include <cstring>
 #include <ctime>
+#include <deque>
 #define DEBUG 0
 #define DBGERR 1
 #define MSG(msg) (std::cout << (msg) << std::endl)
@@ -50,13 +51,20 @@ void	            print_stl(std::deque<int> deque, std::string msg);
 void              print_time(clock_t &start, clock_t &end, std::string stl, int elements);
 
 void			          vectorAlgorithm(std::vector<int> &mainVec);
+void			          dequeAlgorithm(std::deque<int> &mainVec);
 std::vector<size_t>	jacob_insertion_order(size_t n);
 CoupVec			        reorder_pairs_by_max(const std::vector<int> &sorted_max, const CoupVec &pairs);
+CoupVec			        reorder_pairs_by_max(const std::deque<int> &sorted_max, const CoupVec &pairs);
 void				        binary_insert_before_bound(std::vector<int> &vec, int value, size_t bound, std::vector<size_t> &max_positions);
+void				        binary_insert_before_bound(std::deque<int> &vec, int value, size_t bound, std::vector<size_t> &max_positions);
 void				        create_pairs(CoupVec &pairs, const std::vector<int> vec);
+void				        create_pairs(CoupVec &pairs, const std::deque<int> &vec);
 void				        check_for_struggler(bool has_straggler, int &straggler, std::vector<int> &vec);
-std::vector<int>	  create_max_chain(const CoupVec pairs);
+void				        check_for_struggler(bool has_straggler, int &straggler, std::deque<int> &vec);
+std::vector<int>	  vector_create_max_chain(const CoupVec pairs);
+std::deque<int>	    deque_create_max_chain(const CoupVec pairs);
 void				        handle_straggler(bool has_straggler, int straggler, std::vector<int> &vec);
+void				        handle_straggler(bool has_straggler, int straggler, std::deque<int> &vec);
 
 
 #if defined(DEBUG) && DEBUG
