@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:33:02 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/14 22:14:57 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/15 16:35:04 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 #include <map>
 #include <stack>
 #include <cstring>
+#include <ctime>
 #define DEBUG 0
 #define DBGERR 1
 #define MSG(msg) (std::cout << (msg) << std::endl)
@@ -43,6 +44,7 @@ void	            print_stl(std::vector<int> vect);
 void	            print_stl(std::deque<int> deque);
 void	            print_stl(std::vector<int> vect, std::string msg);
 void	            print_stl(std::deque<int> deque, std::string msg);
+void              print_time(clock_t &start, clock_t &end, std::string stl);
 std::vector<int>	jacob_blocks(int range);
 std::vector<int>	decrease(std::vector<int> vect);
 std::vector<int>	jacob_series_limits(int range);

@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:10:37 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/13 17:24:49 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/15 15:35:33 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class PmergeMe
 		PmergeMe& operator=(const PmergeMe& other);
 		~PmergeMe();
 
-		void	vectorSorting();
+		void	Sorting();
 	
 	class ConversionFail : public std::exception
 	{
