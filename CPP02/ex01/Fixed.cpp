@@ -14,7 +14,7 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Fixed constructor called" << std::endl;
+	std::cout << "Fixed constructor called" << std::endl; //ciao
 	this->raw_value = 0;
 }
 
