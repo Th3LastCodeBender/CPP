@@ -111,22 +111,27 @@ void	BitcoinExchange::displayAmount(std::string date)
 {
 	std::map<std::string, float>::iterator index;
 	std::map<std::string, float>::iterator input;
+	std::ios oldState(NULL);
 	
 	if (this->exchangeTable.empty())
 		throw ParsingException("Error: exchange table is empty.");
 	index = this->exchangeTable.find(date);
 	input = this->input.find(date);
+	oldState.copyfmt(std::cout);
+	std::cout << std::fixed << std::setprecision(2);
 	if (index == this->exchangeTable.end())
 		index = this->exchangeTable.lower_bound(date);
 	if (index == this->exchangeTable.end())
 	{
 		--index;
 		std::cout << index->first << " => " << input->second << " = " << index->second * input->second << std::endl;
+		std::cout.copyfmt(oldState);
 		return ;
 	}
 	else if (index->first == date)
 	{
 		std::cout << index->first << " => " << input->second << " = " << index->second * input->second << std::endl;
+		std::cout.copyfmt(oldState);
 		return ;
 	}
 	else if (index == this->exchangeTable.begin())
@@ -134,6 +139,7 @@ void	BitcoinExchange::displayAmount(std::string date)
 	else
 		--index;
 	std::cout << input->first << " => " << input->second << " = " << index->second * input->second << std::endl;
+	std::cout.copyfmt(oldState);
 }
 
 void	BitcoinExchange::inputProcess(std::string inputPath)

@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:18:12 by lparolis          #+#    #+#             */
-/*   Updated: 2026/02/26 22:01:21 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/18 18:53:46 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ bool	checkValueLimits(std::string const &value, char separator)
 		if (convertedValue < 0)
 			std::cout << "Error: not a positive number." << std::endl;
 		else
-			std::cout << "Error: too large a number." << std::endl;
+			std::cout << "Error: too large of a number." << std::endl;
 		return false;
 	}
 	else if (separator == ',' && (convertedValue > 66063.56 || convertedValue < 0))
