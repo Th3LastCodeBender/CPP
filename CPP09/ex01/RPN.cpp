@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 11:30:52 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/11 17:50:19 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:16:56 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,10 @@ bool	RPN::inputProcess(const char *raw_input)
 
 	if (inputParsing(input) == false)
 		return false;
-	executeOps(input);
-	return true;
+	return executeOps(input);
 }
 
-void	RPN::executeOps(std::string input)
+bool	RPN::executeOps(std::string input)
 {
 	std::stack<int> stack;
 	int				digit;
@@ -74,16 +73,22 @@ void	RPN::executeOps(std::string input)
 		if (is_valid_operator(input[i]) == true)
 		{
 			op = input[i];
+			if (stack.size() < 2)
+			{
+				std::cerr << "Error" << std::endl;
+				return (false);
+			}
 			second = stack.top();
 			stack.pop();
 			first = stack.top();
 			stack.pop();
 			if(operation(first, second, op, result) == false)
-				return;
+				return (false);
 			stack.push(result);
 		}		
 	}
 	this->_result = stack.top();
+	return (true);
 }
 
 bool	operation(int first, int second, char op, int &result)
@@ -123,21 +128,39 @@ bool	operation(int first, int second, char op, int &result)
 
 bool	RPN::inputParsing(std::string &input)
 {
-	size_t digits;
-	size_t operators;
+	std::istringstream iss(input);
+	std::string token;
+	int stack_size = 0;
 
-	if (are_chars_valid(input) == false)
-		return (false);
-	
-	digits = count_digits(input);
-	operators = count_operators(input);
-	if (digits != operators + 1)
+	while (iss >> token)
 	{
-		DBG_MSG("Wrong operators and digits numbers");
+		if (token.size() != 1)
+		{
+			std::cerr << "Error" << std::endl;
+			return (false);
+		}
+		char c = token[0];
+		if (std::isdigit(c) != 0)
+			stack_size++;
+		else if (is_valid_operator(c) == true)
+		{
+			if (stack_size < 2)
+			{
+				std::cerr << "Error" << std::endl;
+				return (false);
+			}
+			stack_size--;
+		}
+		else
+		{
+			std::cerr << "Error" << std::endl;
+			return (false);
+		}
+	}
+	if (stack_size != 1)
+	{
 		std::cerr << "Error" << std::endl;
 		return (false);
 	}
-	if(check_order(input) == false)
-		return(false);
 	return (true);
 }

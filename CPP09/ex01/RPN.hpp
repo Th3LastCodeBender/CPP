@@ -32,7 +32,7 @@ class RPN
 
 		bool	inputProcess(const char *raw_input);
 		bool	inputParsing(std::string &input);
-		void	executeOps(std::string input);
+		bool	executeOps(std::string input);
 		int		getResult();
 };
 

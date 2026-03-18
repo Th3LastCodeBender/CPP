@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:10:43 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/15 19:04:26 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:22:58 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 PmergeMe::PmergeMe(int argc, char *input[])
 {
 	DBG_MSG("PmergeMe constructor called");
-	this->_elements = static_cast<size_t>(argc - 1);
+	this->_elements = argc - 1;
 	for (int i = 1; i < argc; i++)
 	{
 		long	result;

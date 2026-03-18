@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:10:37 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/15 18:27:12 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:22:46 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class PmergeMe
 {
 	private:
 	
-		size_t				_elements;
+		int				_elements;
 		std::vector<int>	_vector;
 		std::deque<int>		_deque; 
 
