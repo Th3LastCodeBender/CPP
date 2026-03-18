@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 15:50:58 by lparolis          #+#    #+#             */
-/*   Updated: 2026/02/10 11:18:27 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/18 18:38:40 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	
-	BitcoinExchange test;
-
-	test.inputProcess(argv[1]);
+	try
+	{
+		BitcoinExchange test;
+		test.inputProcess(argv[1]);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return (1);
+	}
 	
 	return (0);
 }

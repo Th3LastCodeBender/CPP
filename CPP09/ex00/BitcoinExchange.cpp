@@ -6,7 +6,7 @@
 /*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 17:10:42 by lparolis          #+#    #+#             */
-/*   Updated: 2026/03/11 11:09:37 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/03/18 18:47:17 by lparolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ int line = 1;
 BitcoinExchange::BitcoinExchange()
 {
 	DBG_MSG("BitcoinExchange constructor called");
-	
 	std::ifstream	table("data.csv");
 	std::string		buffer;
 
 	if (table.fail())
-		throw ParsingException("Error: could not open file.");
+		throw ParsingException("Error: could not open file (data.csv).");
 	line = 1;
 	while (std::getline(table, buffer))
 	{
@@ -113,6 +112,8 @@ void	BitcoinExchange::displayAmount(std::string date)
 	std::map<std::string, float>::iterator index;
 	std::map<std::string, float>::iterator input;
 	
+	if (this->exchangeTable.empty())
+		throw ParsingException("Error: exchange table is empty.");
 	index = this->exchangeTable.find(date);
 	input = this->input.find(date);
 	if (index == this->exchangeTable.end())
@@ -137,23 +138,18 @@ void	BitcoinExchange::displayAmount(std::string date)
 
 void	BitcoinExchange::inputProcess(std::string inputPath)
 {
-	try
+	std::ifstream	input(inputPath.c_str());
+	std::string		buffer;
+	
+	if (input.fail())
+		throw ParsingException("Error: could not open file.");
+	if (input.peek() == std::ifstream::traits_type::eof())
+		throw ParsingException("Error: input file is empty.");
+	line = 1;
+	while (std::getline(input, buffer))
 	{
-		std::ifstream	input(inputPath.c_str());
-		std::string		buffer;
-		
-		if (input.fail())
-			throw ParsingException("Error: could not open file.");
-		line = 1;
-		while (std::getline(input, buffer))
-		{
-			inputParsing(buffer, "input", '|');
-			++line;
-		}
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
+		inputParsing(buffer, "input", '|');
+		++line;
 	}
 }
 
