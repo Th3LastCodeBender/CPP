@@ -84,14 +84,14 @@ bool	checkValueChars(std::string const &value)
 bool	checkValueLimits(std::string const &value, char separator)
 {
 	char *end = 0;
-	long int convertedValue = std::strtof(value.c_str(), &end);
+	double convertedValue = std::strtod(value.c_str(), &end);
     
 	if (end == value.c_str() || (end && *end != '\0'))
 	{
 		std::cout << "Error: bad input => " << value << std::endl;
 		return false;
 	}
-	if (separator == '|' && (convertedValue > 1000 || convertedValue < 0))
+	if (separator == '|' && (convertedValue > 1000.0 || convertedValue < 0.0))
 	{
 		if (convertedValue < 0)
 			std::cout << "Error: not a positive number." << std::endl;

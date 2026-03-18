@@ -49,6 +49,6 @@ int main(int argc, char	*argv[])
 	// for (size_t i = 0; i < size; i++)
 	// 	operation.inputProcess(data[i].c_str());
 	
-	operation.inputProcess(argv[1]);
-	std::cout << operation.getResult() << std::endl;
+	if (operation.inputProcess(argv[1]) == true)
+		std::cout << operation.getResult() << std::endl;
 }

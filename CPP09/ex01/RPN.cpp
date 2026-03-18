@@ -44,13 +44,14 @@ RPN::~RPN()
 
 int	RPN::getResult() {return (this->_result);}
 
-void	RPN::inputProcess(const char *raw_input)
+bool	RPN::inputProcess(const char *raw_input)
 {
 	std::string input(raw_input);
 
 	if (inputParsing(input) == false)
-		return;
+		return false;
 	executeOps(input);
+	return true;
 }
 
 void	RPN::executeOps(std::string input)

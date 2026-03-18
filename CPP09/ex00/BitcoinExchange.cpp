@@ -130,6 +130,8 @@ void	BitcoinExchange::displayAmount(std::string date)
 	}
 	else if (index == this->exchangeTable.begin())
         throw ParsingException("No earlier date available for exchange rate");
+	else
+		--index;
 	std::cout << input->first << " => " << input->second << " = " << index->second * input->second << std::endl;
 }
 

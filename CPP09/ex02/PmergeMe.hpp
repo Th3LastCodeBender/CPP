@@ -19,7 +19,7 @@ class PmergeMe
 {
 	private:
 	
-		id_t				_elements;
+		size_t				_elements;
 		std::vector<int>	_vector;
 		std::deque<int>		_deque; 
 

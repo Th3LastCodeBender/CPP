@@ -15,7 +15,7 @@
 PmergeMe::PmergeMe(int argc, char *input[])
 {
 	DBG_MSG("PmergeMe constructor called");
-	this->_elements = argc;
+	this->_elements = static_cast<size_t>(argc - 1);
 	for (int i = 1; i < argc; i++)
 	{
 		long	result;

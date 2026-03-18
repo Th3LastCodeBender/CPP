@@ -30,7 +30,7 @@ class RPN
 		RPN& operator=(const RPN &obj);
 		~RPN();
 
-		void	inputProcess(const char *raw_input);
+		bool	inputProcess(const char *raw_input);
 		bool	inputParsing(std::string &input);
 		void	executeOps(std::string input);
 		int		getResult();
